@@ -1,145 +1,140 @@
-<h1 align="center">
-  <br>
-  <img src="public/icon.png" alt="VACNET Toolkit" width="96">
-  <br>
-  VACNET Toolkit Extension
-  <br>
-</h1>
+<p align="center">
+  <img src="https://github.com/MartinDawgor/VacNet-Toolkit-Extension/blob/main/public/icon.png?raw=true" alt="VACNET Toolkit" width="96">
+</p>
+
+<h1 align="center">VACNET Toolkit Extension</h1>
 
 <p align="center">
-  <b>Extends the functionality of the CS2 VACNet labeling portal<br>into a full-fledged analytics tool.</b>
+  VACNET Toolkit turns the standard CS2 VACNet labeling portal into a faster workspace with a modern player, verdict presets, keyboard shortcuts, and local clip history.<br>
+  Spend less time waiting and repeating actions, and more time reviewing the replay.
 </p>
 
 <p align="center">
-  <a href="LICENSE"><img alt="License" src="https://img.shields.io/badge/License-GPL%203.0-blue?style=flat-square"></a>
+  <a href="https://github.com/MartinDawgor/VacNet-Toolkit-Extension/releases"><img alt="Version 3.0.0" src="https://img.shields.io/badge/version-3.0.0-5d8d22?style=flat-square"></a>
+  <a href="https://github.com/MartinDawgor/VacNet-Toolkit-Extension/blob/main/LICENSE"><img alt="GPL-3.0" src="https://img.shields.io/badge/license-GPL--3.0-356ea8?style=flat-square"></a>
+  <img alt="Chromium Manifest V3" src="https://img.shields.io/badge/Chromium-Manifest_V3-4285F4?style=flat-square&logo=googlechrome&logoColor=white">
+  <img alt="Firefox 128+" src="https://img.shields.io/badge/Firefox-128%2B-FF7139?style=flat-square&logo=firefoxbrowser&logoColor=white">
 </p>
 
 <p align="center">
-  <sub>⚠️ <b>Notice:</b> This project is maintained on a voluntary basis and is officially distributed <b>only</b> in this repository. The author is <a href="https://github.com/MartinDawgor"><b>MartinDawgor</b></a>. Copying and forking are allowed provided that the original GPL license is kept and clear attribution with a link to this repository is included. Plagiarism or publishing under a different name is strictly prohibited. <br>Contact the author: <b><a href="https://t.me/GeniusShitPost"><b>Telegram</b></a> | <a href="https://steamcommunity.com/id/Chumzes/"><b>Steam</b></a></b></sub>
+  <a href="https://github.com/MartinDawgor/VacNet-Toolkit-Extension/releases"><b>Download</b></a> ·
+  <a href="https://github.com/MartinDawgor/VacNet-Toolkit-Extension/issues"><b>Report an issue</b></a> ·
+  <a href="README.md"><b>Русский</b></a>
 </p>
 
-<div align="right"><a href="README.md">🇷🇺 Русский</a></div>
-
----
-
-This extension removes the restrictions set by the VacNet site, replaces the player and page preloading, adds a verdict panel with keyboard shortcuts, detects duplicate clips, localizes the interface, and keeps a full history of viewed verdicts, while also adding several tweaks for ease of use.
-
-<img src="https://github.com/user-attachments/assets/09926958-2f86-4576-a794-7df56f07ec3d" alt="Main view: player and verdict panel" width="100%">
+<img src="https://github.com/user-attachments/assets/0599be24-b363-4a6d-b854-5fc599fdb630" alt="VACNET Toolkit player and verdict panel" width="100%">
 
 <p align="center">
-  <img src="https://github.com/user-attachments/assets/737b0a4a-b2d1-40c6-b6f1-7c266fd195c2" alt="History dashboard with match cards" width="40%">
-  <img src="https://github.com/user-attachments/assets/8b5f0dc0-e3d6-41cb-b7d5-34b07403fe05" alt="History details" width="40%">
+  <img src="https://github.com/user-attachments/assets/94f3d67c-826a-4a59-9f7c-b7f67ca8cfb5" alt="Reviewed clip history" width="45%">
+  <img src="https://github.com/user-attachments/assets/25b97ba6-73ad-44fc-9520-57d09a758af1" alt="Detailed clip information" width="45%">
 </p>
 
----
+## 🚀 Quick start
 
-## Features
+> Active access to the official VACNet labeling portal is required.
 
-### 🎬 Removal of restrictions
+1. Download the archive for your browser from [Releases](https://github.com/MartinDawgor/VacNet-Toolkit-Extension/releases).
+2. Extract it into a dedicated folder.
+3. Open `chrome://extensions`, enable **Developer mode**, and click **Load unpacked**.
+4. Select the extracted folder and open the VACNet portal.
 
-Playback starts from the beginning of the replay. The graded clip window is marked on the seek bar, and the flagged moment is highlighted with a red trigger marker. Valve's timer that clamps playback to the 12-second window and snaps it back on seek is intercepted via `setInterval`/`setTimeout` and disabled, verdicts are submitted instantly without confirmation, and clips are preloaded without refreshing the page.
+<details>
+<summary><b>Install in Firefox</b></summary>
 
-### 🎮 Modern video player
+1. Use Firefox 128 or newer and download the Firefox build.
+2. Open `about:debugging#/runtime/this-firefox`.
+3. Click **Load Temporary Add-on** and select `manifest.json` from the extracted build.
 
-The portal's default Video.js player is replaced with [Plyr](https://plyr.io/) — a lightweight media player with a clean interface. Speeds from 0.25× to 4×, frame stepping (`←`/`→`), 2× zoom toggle (`Z`), persistent volume. A countdown overlay appears before the flagged moment, and at the trigger point, a clear indicator shows exactly what VacNet reacted to.
+Temporary add-ons must be loaded again after restarting Firefox. A signed package is required for permanent installation.
+</details>
 
-### ⚖️ Verdict panel
-
-Four categories — Aim Assist, Wall Hack, Auto Bhop, Bot — each with **Yes** / **Uncertain** / **No**, color-coded and keyboard-driveable. Submitting a verdict **does not reload the page**: the next clip is fetched in the background, preserving playback position and fullscreen. On failure, the extension falls back to standard portal navigation.
-
-### 🔁 Clip deduplication
-
-Clips are identified by the unique VOD ID of the video + clip creation date + timestamp range. When the portal re-serves the same moment under a new task ID, the extension recognizes it as an exact duplicate, shows your previous verdicts, and optionally auto-applies them for quick confirmation.
-
-### 📊 History & metrics
-
-Every labeled clip is saved in `browser.storage.local`. The dashboard has two views:
-
-- **History** — entries grouped by match, showing clip ranges, task IDs, deduplication status, and per-verdict breakdown.
-- **Metrics** — live data for the current clip: task ID, video ID, WebM URL, clip range, event time, match date, identity status, and Plyr runtime info.
-
-Import and export history as JSON.
-
-### 🌍 Localization
-
-Ships with English and Russian locales. The portal's own interface text — questions, buttons, labels, instructions — is translated in real time via a DOM mutation observer with no page reload.
-
-### 🔒 Privacy & safety
-
-The investigator's nickname is hidden by default. All preferences (stretch video, pinned controls, volume, auto-apply duplicates) are stored locally. Every page transition is validated — form actions are verified against the allowed domain, HTML attributes are sanitized, `javascript:` URLs are removed, and heavy and broken Valve algorithms are muted.
-
----
-
-## What it fixes
-
-The portal works, but has genuine issues:
-
-| Issue | What the extension does |
+| Browser | Support |
 | --- | --- |
-| Playback clamped to ~12s | Intercepts Valve's timers and removes the clamp, enabling full replay seeking |
-| No speeds above 1× | Plyr provides 0.25×–4× and frame stepping |
-| Clip details dialog is broken | The portal binds a modal to a non-existent element — the extension reads metadata directly |
-| Submit reloads the page | The form is posted in background; the next clip is swapped in without losing state |
-| Fixed layout wastes screen space | Video and verdict panel have fixed sizes — the extension uses a responsive flex layout |
-| "Submitting…" indicator never clears | The extension manages submission state directly |
+| Chrome | Primary Manifest V3 build |
+| Edge, Brave, Opera | Current Chromium-based versions |
+| Firefox | Dedicated MV3 build, version 128+ |
 
----
+## ✨ Highlights
 
-## Keyboard shortcuts
+- **Modern player → easier review.** Playback rates from 0.25× to 4×, precise seeking, time stepping, 2× zoom, persistent volume, and an event marker.
+- **Presets → four answers in one action.** Create up to nine color-coded presets, choose their verdicts, and optionally enable instant submission per preset.
+- **Fast transition → less waiting.** Once Valve accepts a verdict, the next clip normally loads without a full page refresh.
+- **Repeat detection → less duplicate work.** The extension recognizes previously seen fragments, displays earlier answers, and can fill them in for confirmation.
+- **History → context when you need it.** Up to 1,000 submitted tasks are stored locally, grouped by match, and available for JSON import or export.
+- **Light and dark themes → comfortable viewing.** The selected theme applies to both the Valve page and extension UI.
+- **English and Russian → familiar controls.** The language follows the browser UI, while known portal labels are translated automatically.
+
+## 🔄 Before and after
+
+| Standard portal | With VACNET Toolkit |
+| --- | --- |
+| Limited clip navigation | Free navigation through the available replay and speeds up to 4× |
+| Four categories filled manually | Up to nine presets with number-key shortcuts |
+| Submission triggers normal navigation | The next task loads into the current interface |
+| Repeated fragments are easy to miss | Previous verdict and repeat status are shown alongside the clip |
+| Fixed legacy layout | Responsive interface with light and dark themes |
+
+## 🎮 Player and verdicts
+
+The suspicious moment is marked on the timeline. A countdown appears before the event, while a precise seek tooltip makes short fragments easier to inspect.
+
+The verdict panel covers four categories: **Aim Assist**, **Wall Hack**, **Auto BHop**, and **Bot**. Each category offers **Yes**, **Uncertain**, and **No**.
+
+You can also:
+
+- keep the player controls visible;
+- stretch the video to the available area;
+- hide the visible reviewer nickname;
+- copy a guest link to the clip;
+- inspect metrics for the current task;
+- import, export, or clear local history.
+
+## ⌨️ Keyboard shortcuts
 
 | Key | Action |
 | --- | --- |
-| `Space` | Play / Pause |
-| `R` | Restart from clip start |
+| `1`–`9` | Apply the preset at that position |
+| `Space` | Play / pause |
+| `R` | Return to the start of the working range |
+| `E` | Jump to the moment before the suspicious event |
+| `←` / `→` | Step backward / forward |
+| `[` / `]` | Decrease / increase playback speed |
 | `Z` | Toggle 2× zoom |
-| `← →` | Step backward / forward one frame |
-| `Enter` | Submit verdict |
-| `Esc` | Close dashboard |
+| `Enter` | Submit the current verdict |
+| `Backspace` | Skip the clip |
+| `Esc` | Close an open dashboard or dialog |
 
-> All hotkeys are physical-key based (`event.code`), so they work correctly on non-US keyboard layouts.
+Shortcuts use physical key positions and work across keyboard layouts. They are disabled while typing, interacting with controls, viewing a modal, or submitting a verdict.
 
----
+> If **Instant submit** is enabled for a preset, pressing its number immediately submits the saved verdict set.
 
-## Install
+## 🔐 Privacy
 
-### Chrome, Edge, Brave, Opera
+- The extension contains no analytics, telemetry, or remotely executed code.
+- Preferences and history are stored locally through `browser.storage.local`.
+- The `storage` permission is used only for settings, presets, and history.
+- Host access is limited to the VACNet page on `counter-strike.net` and videos on `replay-video.valve.net`.
+- Network requests are used to submit verdicts, load the next task, read metadata, and stream Valve WebM video.
+- The extension writes to the clipboard only after you click **Share clip** or **Copy metrics**; it never reads clipboard contents.
+- No data is sent to the developer or third-party analytics services.
 
-1. Download the latest release zip from [Releases](https://github.com/MartinDawgor/VacNet-Toolkit-Extension/releases).
-2. Open `chrome://extensions`, enable **Developer mode**.
-3. Drag the zip onto the page.
+> A history export may contain direct source WebM URLs with access parameters. Do not publish history JSON files or copied guest links.
 
-### Firefox
+Nickname hiding only changes the name displayed in the top bar. It does not anonymize your account, network traffic, links, or exported data.
 
-1. Download the Firefox release zip from [Releases](https://github.com/MartinDawgor/VacNet-Toolkit-Extension/releases).
-2. Open `about:debugging#/runtime/this-firefox`.
-3. Click **Load Temporary Add-on** and select the zip.
+## ⚠️ Important
 
-> **Note:** the extension uses a content script running in the page's `MAIN` world to intercept Valve's playback timers. **Firefox 128+** is required; Chrome has no extra requirement.
+VACNET Toolkit helps manage playback and the answers you select; it does not decide verdicts on its own. Automatic submission occurs only for presets where the user explicitly enables that option.
 
----
+This project is not affiliated with Valve Corporation. Counter-Strike, Counter-Strike 2, and VACNet are trademarks of Valve Corporation. Follow the portal access rules and do not redistribute review materials.
 
-## Privacy
+## 👤 Author and contact
 
-- **`storage`** — keeps your labeling history and preferences in `browser.storage.local`.
-- **`https://www.counter-strike.net/*`** — the only host permission. The extension does not run anywhere else.
+The project is distributed under the [GPL-3.0 license](https://github.com/MartinDawgor/VacNet-Toolkit-Extension/blob/main/LICENSE) and maintained on a voluntary basis.
 
-No analytics, no telemetry, no remote code. The only network request the extension makes is posting your verdict to `counter-strike.net` when you confirm it — the same submission the portal would have made itself. Nothing is sent to the developer or any third party.
+- Author: [MartinDawgor](https://github.com/MartinDawgor)
+- Bugs and suggestions: [GitHub Issues](https://github.com/MartinDawgor/VacNet-Toolkit-Extension/issues)
+- Telegram: [@GeniusShitPost](https://t.me/GeniusShitPost)
+- Steam: [Chumzes](https://steamcommunity.com/id/Chumzes/)
 
-Your history never leaves the browser unless you explicitly export it as JSON.
-
----
-
-## Disclaimer
-
-This extension is a quality-of-life layer over the labeling portal. It **does not label clips for you**, does not auto-submit verdicts, and does not automate any part of the review process.
-
-Every answer is one you pick. Submitting requires a deliberate press. A recalled verdict from a previously seen clip is filled in for you to confirm or change — never sent on its own. There is no bulk labeling, no auto-advance, and no scripted answering.
-
-Investigators are advised not to stream, record, or share these clips, so there is no frame export, clip download, or sharing feature. The investigator's nickname is hidden by default.
-
----
-
-<p align="center">
-  Counter-Strike, Counter-Strike 2 and VACNet are trademarks of Valve Corporation.<br>
-  This project is not affiliated with Valve, and is distributed on a voluntary basis.
-</p>
+<p align="center"><sub>VACNET Toolkit Extension 3.0.0</sub></p>
