@@ -1,0 +1,909 @@
+{
+  "app": {
+    "message": "App"
+  },
+  "themeToggleTitle": {
+    "message": "Toggle theme"
+  },
+  "themeToggleHint": {
+    "message": "Switch between light and dark themes"
+  },
+  "autoApplyRepeatVerdicts": {
+    "message": "Auto verdict"
+  },
+  "autoApplyRepeatVerdictsHint": {
+    "message": "Automatically apply the latest verdict for a repeated video"
+  },
+  "autoSubmitPreset": {
+    "message": "Submit immediately"
+  },
+  "badClip": {
+    "message": "Bad clip"
+  },
+  "btnBack": {
+    "message": "Back"
+  },
+  "btnConfirm": {
+    "message": "Confirm"
+  },
+  "btnNo": {
+    "message": "No"
+  },
+  "btnProceed": {
+    "message": "Proceed"
+  },
+  "btnReportBadClip": {
+    "message": "Report Bad Clip"
+  },
+  "btnResetConfirm": {
+    "message": "Reset & Delete"
+  },
+  "btnSendFeedback": {
+    "message": "Send Feedback"
+  },
+  "btnSkip": {
+    "message": "Skip clip"
+  },
+  "btnSubmit": {
+    "message": "Submit verdict"
+  },
+  "btnUncertain": {
+    "message": "Uncertain"
+  },
+  "btnYes": {
+    "message": "Yes"
+  },
+  "byAuthor": {
+    "message": "| by MartinDawgor"
+  },
+  "cancel": {
+    "message": "Cancel"
+  },
+  "clearVideoHistory": {
+    "message": "Clear history"
+  },
+  "clearVideoHistoryHint": {
+    "message": "Irreversibly delete the entire clip journal"
+  },
+  "clipCountAtSubmission": {
+    "message": "Count at submission"
+  },
+  "clipDataTitle": {
+    "message": "Clip Data"
+  },
+  "clipDetails": {
+    "message": "Clip Details"
+  },
+  "clipIdentityStatus": {
+    "message": "Identity status"
+  },
+  "clipKey": {
+    "message": "Composite clip key"
+  },
+  "clipLinkCopied": {
+    "message": "Copied!"
+  },
+  "clipLogSummary": {
+    "message": "Log Summary"
+  },
+  "clipNumber": {
+    "message": "Clip"
+  },
+  "clipRange": {
+    "message": "Clip range"
+  },
+  "clipRepeats": {
+    "message": "Repeats"
+  },
+  "clipSelectionNotice": {
+    "message": "Clip selection is not a representative sample of gameplay."
+  },
+  "clipsLabeled": {
+    "message": "Clips Labeled:"
+  },
+  "clipStatusExactDuplicate": {
+    "message": "Exact duplicate of an assessed clip"
+  },
+  "clipStatusNewClip": {
+    "message": "Same match, new clip"
+  },
+  "clipStatusNewMatch": {
+    "message": "New match"
+  },
+  "clipStatusNewVideo": {
+    "message": "New VOD, new clip"
+  },
+  "clipStatusSameVideoDifferentClip": {
+    "message": "Same VOD, different clip"
+  },
+  "clipStatusShiftedDuplicate": {
+    "message": "Shifted duplicate found"
+  },
+  "clipSummaryChecking": {
+    "message": "Checking"
+  },
+  "clipSummaryMoment": {
+    "message": "Clip"
+  },
+  "clipSummaryNew": {
+    "message": "New"
+  },
+  "clipSummaryRange": {
+    "message": "Range"
+  },
+  "clipSummaryRepeat": {
+    "message": "Repeat"
+  },
+  "clipSummaryVideo": {
+    "message": "Video"
+  },
+  "closeClipDetails": {
+    "message": "Close clip details"
+  },
+  "closeDashboard": {
+    "message": "Close dashboard"
+  },
+  "closePresetPanel": {
+    "message": "Close verdict presets"
+  },
+  "confirmClearHistory": {
+    "message": "Are you sure you want to permanently delete the entire clip journal? This action cannot be undone."
+  },
+  "confirmResetPresetsMessage": {
+    "message": "Are you sure you want to reset all verdicts and delete all saved presets? This action cannot be undone."
+  },
+  "confirmResetPresetsTitle": {
+    "message": "Reset verdicts and presets?"
+  },
+  "copyMetrics": {
+    "message": "Copy metrics"
+  },
+  "copyMetricsHint": {
+    "message": "Copy all collected data and metrics for the current video"
+  },
+  "createPreset": {
+    "message": "Create preset"
+  },
+  "cs2VideoReview": {
+    "message": "CS2 Video Review"
+  },
+  "debug": {
+    "message": "Debug"
+  },
+  "deletePreset": {
+    "message": "Delete preset"
+  },
+  "devMetricsTitle": {
+    "message": "Developer Metrics"
+  },
+  "disabled": {
+    "message": "disabled"
+  },
+  "downloadVideoHistory": {
+    "message": "Download Database"
+  },
+  "downloadVideoHistoryHint": {
+    "message": "Download the local verdict history database as JSON"
+  },
+  "editPreset": {
+    "message": "Edit preset"
+  },
+  "emptyClientSnapshot": {
+    "message": "No data is available in the client snapshot"
+  },
+  "enabled": {
+    "message": "enabled"
+  },
+  "errConflictingTranslation": {
+    "message": "Conflicting translation mappings for source text: {p1}",
+    "placeholders": {
+      "p1": {
+        "content": "$1"
+      }
+    }
+  },
+  "errHistoryFileNotUtf8": {
+    "message": "History file must contain UTF-8 text."
+  },
+  "errHistoryFileReadAborted": {
+    "message": "History file reading was aborted."
+  },
+  "errHistoryFileReadFailed": {
+    "message": "History file could not be read."
+  },
+  "errHistoryFileTooLarge": {
+    "message": "History file exceeds the 10 MiB limit."
+  },
+  "errHistoryInvalidStoredValue": {
+    "message": "VACNET history changed to an invalid value."
+  },
+  "errHistoryLookupFailed": {
+    "message": "History lookup failed: {error}",
+    "placeholders": {
+      "error": {
+        "content": "$1"
+      }
+    }
+  },
+  "errMissingBrowserTranslation": {
+    "message": "Missing browser translation: {p1}",
+    "placeholders": {
+      "p1": {
+        "content": "$1"
+      }
+    }
+  },
+  "errNoActiveClip": {
+    "message": "No active Valve clip is available for submission."
+  },
+  "errorNextClipLoad": {
+    "message": "Could not load next clip: {error}",
+    "placeholders": {
+      "error": {
+        "content": "$1"
+      }
+    }
+  },
+  "errorNextClipMissing": {
+    "message": "Server response does not contain the next clip"
+  },
+  "errorPlayerOrFormUnavailable": {
+    "message": "Player or form is unavailable"
+  },
+  "errorServerResponse": {
+    "message": "Server returned {status}",
+    "placeholders": {
+      "status": {
+        "content": "$1"
+      }
+    }
+  },
+  "errPreferencesInvalidPatch": {
+    "message": "VACNET preferences patch is invalid."
+  },
+  "errPreferencesInvalidStoredValue": {
+    "message": "VACNET preferences changed to an invalid value."
+  },
+  "errReviewVideoMetadataLoadFailed": {
+    "message": "VACNET review video failed to load metadata."
+  },
+  "errReviewVideoMetadataTimeout": {
+    "message": "VACNET review video metadata loading timed out."
+  },
+  "errReviewVideoSeekFailed": {
+    "message": "VACNET review video failed while seeking."
+  },
+  "errUnhandledDeduplicationStatus": {
+    "message": "Unhandled clip deduplication status: {p1}",
+    "placeholders": {
+      "p1": {
+        "content": "$1"
+      }
+    }
+  },
+  "errUnhandledHistoryMutation": {
+    "message": "Unhandled history mutation: {p1}",
+    "placeholders": {
+      "p1": {
+        "content": "$1"
+      }
+    }
+  },
+  "errUnhandledIsolatedEvent": {
+    "message": "Unhandled isolated event: {p1}",
+    "placeholders": {
+      "p1": {
+        "content": "$1"
+      }
+    }
+  },
+  "errUnhandledMainWorldEvent": {
+    "message": "Unhandled main-world event: {p1}",
+    "placeholders": {
+      "p1": {
+        "content": "$1"
+      }
+    }
+  },
+  "errUnhandledPlayerCommand": {
+    "message": "Unhandled player command: {p1}",
+    "placeholders": {
+      "p1": {
+        "content": "$1"
+      }
+    }
+  },
+  "errUseTranslationOutsideProvider": {
+    "message": "useTranslation must be used inside TranslationProvider."
+  },
+  "errValveCurrentFormRemoved": {
+    "message": "Current Valve verdict form was removed before the page transition."
+  },
+  "errValveDisallowedActionUrl": {
+    "message": "Valve response contains a disallowed verdict form action URL: \"{p1}\"",
+    "placeholders": {
+      "p1": {
+        "content": "$1"
+      }
+    }
+  },
+  "errValveDisallowedVideoUrl": {
+    "message": "Valve page contains a disallowed video source URL: \"{p1}\"",
+    "placeholders": {
+      "p1": {
+        "content": "$1"
+      }
+    }
+  },
+  "errValveFormNoAction": {
+    "message": "Valve verdict form has no action URL."
+  },
+  "errValveFormNoTaskField": {
+    "message": "Valve verdict form contains no task field."
+  },
+  "errValveFormNotFound": {
+    "message": "Valve verdict form was not found."
+  },
+  "errValveFormTaskFieldCount": {
+    "message": "Valve verdict form must contain exactly one task field."
+  },
+  "errValveHttpStatus": {
+    "message": "Valve returned HTTP {p1}.",
+    "placeholders": {
+      "p1": {
+        "content": "$1"
+      }
+    }
+  },
+  "errValveInvalidFormField": {
+    "message": "Invalid Valve form field: {p1} (type: {p2}, length: {p3})",
+    "placeholders": {
+      "p1": {
+        "content": "$1"
+      },
+      "p2": {
+        "content": "$2"
+      },
+      "p3": {
+        "content": "$3"
+      }
+    }
+  },
+  "errValveInvalidTaskField": {
+    "message": "Valve verdict form contains an invalid task field (type: {p1}, length: {p2}).",
+    "placeholders": {
+      "p1": {
+        "content": "$1"
+      },
+      "p2": {
+        "content": "$2"
+      }
+    }
+  },
+  "errValveNextFormMissing": {
+    "message": "Valve response does not contain the next verdict form."
+  },
+  "errValveNextFormNoAction": {
+    "message": "Valve response contains a verdict form without an action URL."
+  },
+  "errValveNextFormNoActionUrl": {
+    "message": "Next Valve verdict form has no action URL."
+  },
+  "errValveNextPageNoForm": {
+    "message": "Next Valve page does not contain a verdict form."
+  },
+  "errValveNextUnexpectedActionUrl": {
+    "message": "Next Valve verdict form has an unexpected action URL: \"{p1}\"",
+    "placeholders": {
+      "p1": {
+        "content": "$1"
+      }
+    }
+  },
+  "errValveNextUnsupportedMethod": {
+    "message": "Unsupported next Valve verdict form method: {p1}.",
+    "placeholders": {
+      "p1": {
+        "content": "$1"
+      }
+    }
+  },
+  "errValveNoClipCounter": {
+    "message": "Current Valve page does not contain the clip counter."
+  },
+  "errValveNoClipCounterTransition": {
+    "message": "Current Valve page does not contain the clip counter required for transition."
+  },
+  "errValveNoTaskId": {
+    "message": "Valve page does not contain a verdict task ID."
+  },
+  "errValveNoTiming": {
+    "message": "Valve page does not contain valid clip timing."
+  },
+  "errValveNoVideoContainer": {
+    "message": "Valve page does not contain a video container."
+  },
+  "errValveNoVideoSource": {
+    "message": "Valve page does not contain a video source."
+  },
+  "errValveUnexpectedEndpoint": {
+    "message": "Unexpected Valve verdict endpoint: \"{p1}\"",
+    "placeholders": {
+      "p1": {
+        "content": "$1"
+      }
+    }
+  },
+  "errValveUnexpectedPageUrl": {
+    "message": "Valve response has an unexpected page URL: \"{p1}\"",
+    "placeholders": {
+      "p1": {
+        "content": "$1"
+      }
+    }
+  },
+  "errValveUnexpectedResponseUrl": {
+    "message": "Valve returned an unexpected response URL."
+  },
+  "errValveUnsupportedContentType": {
+    "message": "Valve returned unsupported content type: {p1}.",
+    "placeholders": {
+      "p1": {
+        "content": "$1"
+      }
+    }
+  },
+  "errValveUnsupportedMethod": {
+    "message": "Unsupported Valve verdict form method: {p1}.",
+    "placeholders": {
+      "p1": {
+        "content": "$1"
+      }
+    }
+  },
+  "errValveVideoElementSeekFailed": {
+    "message": "Valve video element failed while seeking the next clip."
+  },
+  "errValveVideoJsMetadataTimeout": {
+    "message": "Valve Video.js metadata loading timed out."
+  },
+  "errValveVideoJsSourceLoadFailed": {
+    "message": "Valve Video.js failed to load the next source."
+  },
+  "errVerdictAcceptedHistoryFailed": {
+    "message": "Verdict accepted, but local history failed: {error}",
+    "placeholders": {
+      "error": {
+        "content": "$1"
+      }
+    }
+  },
+  "errVideoJsEarlyConfig": {
+    "message": "Video.js cannot be configured before VACNET initialization."
+  },
+  "errVideoJsNotFound": {
+    "message": "Valve Video.js player was not found."
+  },
+  "errVideoJsUnavailable": {
+    "message": "Valve Video.js player is unavailable."
+  },
+  "errVideoOperationTimeout": {
+    "message": "{operation} timed out.",
+    "placeholders": {
+      "operation": {
+        "content": "$1"
+      }
+    }
+  },
+  "eventTime": {
+    "message": "Event time"
+  },
+  "extensionDescription": {
+    "message": "Powerful extension for the VacNet site, featuring a user-friendly interface, unlocked functions, and handy tweaks."
+  },
+  "extensionName": {
+    "message": "VacNet Toolkit Extension"
+  },
+  "frameDuration": {
+    "message": "Frame duration"
+  },
+  "hideNickname": {
+    "message": "Hide Nickname"
+  },
+  "hideNicknameHint": {
+    "message": "Hide the display of your nickname in the top bar"
+  },
+  "historyLogTitle": {
+    "message": "Clip Journal"
+  },
+  "historyMatch": {
+    "message": "Match"
+  },
+  "historyMatchSummary": {
+    "message": "Match {match} - {date}",
+    "placeholders": {
+      "date": {
+        "content": "$2"
+      },
+      "match": {
+        "content": "$1"
+      }
+    }
+  },
+  "historyTasks": {
+    "message": "tasks"
+  },
+  "hotkeyHelp": {
+    "message": "1–9: verdict presets · R: clip start · Z: zoom · E: event · Space: pause · Enter: submit · Backspace: skip · Arrows: frame step · [ / ]: playback speed"
+  },
+  "hotkeyTitle": {
+    "message": "Hotkeys"
+  },
+  "inviteReviewers": {
+    "message": "Invite"
+  },
+  "keepControlsVisible": {
+    "message": "Pin Player Controls"
+  },
+  "keepControlsVisibleHint": {
+    "message": "Keep the video player control bar always visible"
+  },
+  "labelAimAssist": {
+    "message": "Aim Assist"
+  },
+  "labelAutoBhop": {
+    "message": "Auto BHop"
+  },
+  "labelBot": {
+    "message": "Bot Player"
+  },
+  "labelWallHack": {
+    "message": "Wall Hack"
+  },
+  "language": {
+    "message": "Language"
+  },
+  "legacy": {
+    "message": "Legacy"
+  },
+  "logout": {
+    "message": "Logout"
+  },
+  "matchDate": {
+    "message": "Clip Date"
+  },
+  "noClipHistory": {
+    "message": "No clips in history"
+  },
+  "noInvites": {
+    "message": "You have no invites available. Earn more by continuing to label clips."
+  },
+  "nicknameReplacement": {
+    "message": "Reviewer "
+  },
+  "none": {
+    "message": "none"
+  },
+  "notAvailable": {
+    "message": "N/A"
+  },
+  "notFound": {
+    "message": "not found"
+  },
+  "openVideo": {
+    "message": "Open video"
+  },
+  "playerId": {
+    "message": "Player ID"
+  },
+  "playerSettings": {
+    "message": "Settings"
+  },
+  "plyrRuntime": {
+    "message": "Plyr Runtime Environment"
+  },
+  "presetColor": {
+    "message": "Accent color"
+  },
+  "presetColorBlue": {
+    "message": "Blue"
+  },
+  "presetColorCyan": {
+    "message": "Cyan"
+  },
+  "presetColorGold": {
+    "message": "Gold"
+  },
+  "presetColorGreen": {
+    "message": "Green"
+  },
+  "presetColorOrange": {
+    "message": "Orange"
+  },
+  "presetColorPink": {
+    "message": "Pink"
+  },
+  "presetColorPurple": {
+    "message": "Purple"
+  },
+  "presetColorRed": {
+    "message": "Red"
+  },
+  "presetColorSlate": {
+    "message": "Slate"
+  },
+  "presetName": {
+    "message": "Name"
+  },
+  "presetNameDuplicate": {
+    "message": "Preset names must be unique"
+  },
+  "presetPanelHint": {
+    "message": "Open verdict presets"
+  },
+  "presetPanelTitle": {
+    "message": "Presets"
+  },
+  "previousVerdicts": {
+    "message": "Previous verdicts"
+  },
+  "processedAt": {
+    "message": "Processed"
+  },
+  "questionAimAssist": {
+    "message": "Is the Suspect using Aim Assist to snap to opponents or instantly firing when an opponent enters the Suspect's crosshair?"
+  },
+  "questionAutoBhop": {
+    "message": "Is the Suspect using assistance to time their jump inputs at the exact moment they land to increase movement speed?"
+  },
+  "questionBot": {
+    "message": "Does the Suspect look fully automated?"
+  },
+  "questionWallHack": {
+    "message": "Is the Suspect using Wall Hacks to see enemy players through walls, floors, smokes, while flashed, or other obstacles?"
+  },
+  "recentClips": {
+    "message": "Recent Videos"
+  },
+  "resetVerdicts": {
+    "message": "Reset"
+  },
+  "reviewInstructions": {
+    "message": "Review instructions"
+  },
+  "savedClips": {
+    "message": "Assessed clips"
+  },
+  "savedInLocalHistory": {
+    "message": "Saved in local history"
+  },
+  "savePreset": {
+    "message": "Save"
+  },
+  "shareClip": {
+    "message": "Share clip"
+  },
+  "sourceApp": {
+    "message": "App"
+  },
+  "sourceBtnBack": {
+    "message": "Back"
+  },
+  "sourceBtnConfirm": {
+    "message": "Confirm"
+  },
+  "sourceBtnProceed": {
+    "message": "Proceed"
+  },
+  "sourceBtnReportBadClip": {
+    "message": "Report Bad Clip"
+  },
+  "sourceBtnSendFeedback": {
+    "message": "Send Feedback"
+  },
+  "sourceBtnUncertain": {
+    "message": "Uncertain"
+  },
+  "sourceClipDetails": {
+    "message": "Clip Details"
+  },
+  "sourceClipSelectionNotice": {
+    "message": "Clip selection is not a representative sample of gameplay."
+  },
+  "sourceClipsLabeled": {
+    "message": "Clips Labeled:"
+  },
+  "sourceCs2VideoReview": {
+    "message": "CS2 Video Review"
+  },
+  "sourceDevMetricsTitle": {
+    "message": "Developer Metrics"
+  },
+  "sourceInviteReviewers": {
+    "message": "Invite Reviewers"
+  },
+  "sourceLabelAimAssist": {
+    "message": "Aim Assist"
+  },
+  "sourceLabelAutoBhop": {
+    "message": "Auto BHop"
+  },
+  "sourceLabelBot": {
+    "message": "Bot Player"
+  },
+  "sourceLabelWallHack": {
+    "message": "Wall Hack"
+  },
+  "sourceLogout": {
+    "message": "Logout"
+  },
+  "sourceNoInvites": {
+    "message": "You have no invites available. Earn more by continuing to label clips."
+  },
+  "sourceNone": {
+    "message": "none"
+  },
+  "sourceQuestionAimAssist": {
+    "message": "Is the Suspect using Aim Assist to snap to opponents or instantly firing when an opponent enters the Suspect's crosshair?"
+  },
+  "sourceQuestionAutoBhop": {
+    "message": "Is the Suspect using assistance to time their jump inputs at the exact moment they land to increase movement speed?"
+  },
+  "sourceQuestionBot": {
+    "message": "Does the Suspect look fully automated?"
+  },
+  "sourceQuestionWallHack": {
+    "message": "Is the Suspect using Wall Hacks to see enemy players through walls, floors, smokes, while flashed, or other obstacles?"
+  },
+  "sourceStatusPleaseWait": {
+    "message": "Please Wait..."
+  },
+  "sourceStatusSubmitting": {
+    "message": "Submitting..."
+  },
+  "sourceTaskId": {
+    "message": "Task ID"
+  },
+  "sourceUncertainNotice": {
+    "message": "It is fine (and expected) that you will often select \"Uncertain.\" Please be certain if you make any other selection."
+  },
+  "sourceVerdictTrainingNotice": {
+    "message": "The player you are watching will not be directly affected by your verdict. Rather, labels may be used to train future VACNet models."
+  },
+  "sourceWatchClipInstructions": {
+    "message": "Please watch the clip with audio and answer the question(s) presented."
+  },
+  "sourceXrayActive": {
+    "message": "X-Ray is active."
+  },
+  "statusLoadingNextClip": {
+    "message": "Loading next clip..."
+  },
+  "statusPleaseWait": {
+    "message": "Please Wait..."
+  },
+  "statusSubmitting": {
+    "message": "Submitting..."
+  },
+  "stretchVideo": {
+    "message": "Stretch Video"
+  },
+  "taskId": {
+    "message": "Task ID"
+  },
+  "technicalData": {
+    "message": "Technical data"
+  },
+  "timeRangeSeconds": {
+    "message": "{start}-{end} s",
+    "placeholders": {
+      "end": {
+        "content": "$2"
+      },
+      "start": {
+        "content": "$1"
+      }
+    }
+  },
+  "timeSeconds": {
+    "message": "{time} s",
+    "placeholders": {
+      "time": {
+        "content": "$1"
+      }
+    }
+  },
+  "totalClipsViewed": {
+    "message": "Total Viewed"
+  },
+  "triggerCountdown": {
+    "message": "VacNet Trigger in [time]..."
+  },
+  "triggerFlash": {
+    "message": "⚠️ VacNet Trigger"
+  },
+  "triggerMarkerLabel": {
+    "message": "VacNet Trigger"
+  },
+  "uncertainNotice": {
+    "message": "It is fine (and expected) that you will often select \"Uncertain.\" Please be certain if you make any other selection."
+  },
+  "unknownDate": {
+    "message": "Unknown (Legacy)"
+  },
+  "uploadVideoHistory": {
+    "message": "Upload Database"
+  },
+  "uploadVideoHistoryHint": {
+    "message": "Upload a local verdict history database from a JSON file"
+  },
+  "verdict": {
+    "message": "Verdict"
+  },
+  "verdictTitle": {
+    "message": "Review the gameplay clip and determine whether the suspect uses third-party software, scripts, or automation."
+  },
+  "verdictTrainingNotice": {
+    "message": "The player you are watching will not be directly affected by your verdict. Rather, labels may be used to train future VACNet models."
+  },
+  "version": {
+    "message": "Version"
+  },
+  "videoId": {
+    "message": "Video ID"
+  },
+  "videoJsCaptions": {
+    "message": "Captions"
+  },
+  "videoJsClose": {
+    "message": "Close"
+  },
+  "videoJsDone": {
+    "message": "Done"
+  },
+  "videoJsExitFullscreen": {
+    "message": "Exit Fullscreen"
+  },
+  "videoJsFullscreen": {
+    "message": "Fullscreen"
+  },
+  "videoJsMute": {
+    "message": "Mute"
+  },
+  "videoJsPause": {
+    "message": "Pause"
+  },
+  "videoJsPlay": {
+    "message": "Play"
+  },
+  "videoJsPlaybackRate": {
+    "message": "Playback Rate"
+  },
+  "videoJsProgressBar": {
+    "message": "Progress Bar"
+  },
+  "videoJsReset": {
+    "message": "Reset"
+  },
+  "videoJsSubtitles": {
+    "message": "Subtitles"
+  },
+  "videoJsUnmute": {
+    "message": "Unmute"
+  },
+  "videoJsVideoPlayer": {
+    "message": "Video Player"
+  },
+  "videoJsVolumeLevel": {
+    "message": "Volume Level"
+  },
+  "watchClipInstructions": {
+    "message": "Please watch the clip with audio and answer the question(s) presented."
+  },
+  "webmUrl": {
+    "message": "WebM URL"
+  },
+  "xrayActive": {
+    "message": "X-Ray is active."
+  }
+}

@@ -1,0 +1,909 @@
+{
+  "app": {
+    "message": "Приложение"
+  },
+  "themeToggleTitle": {
+    "message": "Переключить тему"
+  },
+  "themeToggleHint": {
+    "message": "Переключение между светлой и темной темой"
+  },
+  "autoApplyRepeatVerdicts": {
+    "message": "Автовердикт"
+  },
+  "autoApplyRepeatVerdictsHint": {
+    "message": "Автоматически подставлять последний вердикт для повторного видео"
+  },
+  "autoSubmitPreset": {
+    "message": "Сразу отправлять"
+  },
+  "badClip": {
+    "message": "Плохой клип"
+  },
+  "btnBack": {
+    "message": "Назад"
+  },
+  "btnConfirm": {
+    "message": "Подтвердить"
+  },
+  "btnNo": {
+    "message": "Нет"
+  },
+  "btnProceed": {
+    "message": "Продолжить"
+  },
+  "btnReportBadClip": {
+    "message": "Сообщить о плохом клипе"
+  },
+  "btnResetConfirm": {
+    "message": "Сбросить и удалить"
+  },
+  "btnSendFeedback": {
+    "message": "Отправить отзыв"
+  },
+  "btnSkip": {
+    "message": "Пропустить клип"
+  },
+  "btnSubmit": {
+    "message": "Отправить вердикт"
+  },
+  "btnUncertain": {
+    "message": "Не уверен"
+  },
+  "btnYes": {
+    "message": "Да"
+  },
+  "byAuthor": {
+    "message": "| by MartinDawgor"
+  },
+  "cancel": {
+    "message": "Отмена"
+  },
+  "clearVideoHistory": {
+    "message": "Очистить историю"
+  },
+  "clearVideoHistoryHint": {
+    "message": "Удалить все сохраненные видео, клипы и счетчик повторов"
+  },
+  "clipCountAtSubmission": {
+    "message": "Счетчик при отправке"
+  },
+  "clipDataTitle": {
+    "message": "Данные клипа"
+  },
+  "clipDetails": {
+    "message": "Детали клипа"
+  },
+  "clipIdentityStatus": {
+    "message": "Статус идентификации"
+  },
+  "clipKey": {
+    "message": "Композитный ключ клипа"
+  },
+  "clipLinkCopied": {
+    "message": "Скопировано!"
+  },
+  "clipLogSummary": {
+    "message": "Статистика журнала"
+  },
+  "clipNumber": {
+    "message": "Клип"
+  },
+  "clipRange": {
+    "message": "Отрезок клипа"
+  },
+  "clipRepeats": {
+    "message": "Повторов"
+  },
+  "clipSelectionNotice": {
+    "message": "Данные клипы специально отобраны алгоритмом, поэтому в них часто встречаются нетипичные игровые ситуации."
+  },
+  "clipsLabeled": {
+    "message": "Проверено клипов:"
+  },
+  "clipStatusExactDuplicate": {
+    "message": "Точный дубликат оцененного клипа"
+  },
+  "clipStatusNewClip": {
+    "message": "Тот же матч, новый фрагмент"
+  },
+  "clipStatusNewMatch": {
+    "message": "Новый матч"
+  },
+  "clipStatusNewVideo": {
+    "message": "Новый VOD, новый клип"
+  },
+  "clipStatusSameVideoDifferentClip": {
+    "message": "Тот же VOD, другой клип"
+  },
+  "clipStatusShiftedDuplicate": {
+    "message": "Найден сдвинутый дубликат"
+  },
+  "clipSummaryChecking": {
+    "message": "Проверка"
+  },
+  "clipSummaryMoment": {
+    "message": "Клип"
+  },
+  "clipSummaryNew": {
+    "message": "Новый"
+  },
+  "clipSummaryRange": {
+    "message": "Отрезок"
+  },
+  "clipSummaryRepeat": {
+    "message": "Повтор"
+  },
+  "clipSummaryVideo": {
+    "message": "Видео"
+  },
+  "closeClipDetails": {
+    "message": "Закрыть детали клипа"
+  },
+  "closeDashboard": {
+    "message": "Закрыть панель"
+  },
+  "closePresetPanel": {
+    "message": "Закрыть пресеты вердиктов"
+  },
+  "confirmClearHistory": {
+    "message": "Вы уверены, что хотите безвозвратно удалить весь журнал клипов? Это действие нельзя отменить."
+  },
+  "confirmResetPresetsMessage": {
+    "message": "Вы уверены, что хотите сбросить все выбранные вердикты и удалить все сохраненные пресеты? Это действие нельзя отменить."
+  },
+  "confirmResetPresetsTitle": {
+    "message": "Сбросить вердикты и пресеты?"
+  },
+  "copyMetrics": {
+    "message": "Копировать метрики"
+  },
+  "copyMetricsHint": {
+    "message": "Копировать все собранные данные и метрики текущего видео"
+  },
+  "createPreset": {
+    "message": "Создать пресет"
+  },
+  "cs2VideoReview": {
+    "message": "Патруль CS2"
+  },
+  "debug": {
+    "message": "Отладка"
+  },
+  "deletePreset": {
+    "message": "Удалить пресет"
+  },
+  "devMetricsTitle": {
+    "message": "Метрики разработчика"
+  },
+  "disabled": {
+    "message": "выключена"
+  },
+  "downloadVideoHistory": {
+    "message": "Скачать базу"
+  },
+  "downloadVideoHistoryHint": {
+    "message": "Скачать локальную базу вердиктов в формате JSON"
+  },
+  "editPreset": {
+    "message": "Изменить пресет"
+  },
+  "emptyClientSnapshot": {
+    "message": "Данные в клиентском снимке отсутствуют"
+  },
+  "enabled": {
+    "message": "включена"
+  },
+  "errConflictingTranslation": {
+    "message": "Конфликт переводов для исходного текста: {p1}",
+    "placeholders": {
+      "p1": {
+        "content": "$1"
+      }
+    }
+  },
+  "errHistoryFileNotUtf8": {
+    "message": "Файл истории должен содержать текст в кодировке UTF-8."
+  },
+  "errHistoryFileReadAborted": {
+    "message": "Чтение файла истории было прервано."
+  },
+  "errHistoryFileReadFailed": {
+    "message": "Не удалось прочитать файл истории."
+  },
+  "errHistoryFileTooLarge": {
+    "message": "Размер файла истории превышает лимит 10 МиБ."
+  },
+  "errHistoryInvalidStoredValue": {
+    "message": "История VACNET изменилась и содержит недопустимое значение."
+  },
+  "errHistoryLookupFailed": {
+    "message": "Не удалось найти запись в истории: {error}",
+    "placeholders": {
+      "error": {
+        "content": "$1"
+      }
+    }
+  },
+  "errMissingBrowserTranslation": {
+    "message": "Отсутствует перевод браузера: {p1}",
+    "placeholders": {
+      "p1": {
+        "content": "$1"
+      }
+    }
+  },
+  "errNoActiveClip": {
+    "message": "Нет активного клипа Valve для отправки."
+  },
+  "errorNextClipLoad": {
+    "message": "Не удалось загрузить следующий клип: {error}",
+    "placeholders": {
+      "error": {
+        "content": "$1"
+      }
+    }
+  },
+  "errorNextClipMissing": {
+    "message": "Ответ сервера не содержит следующего клипа"
+  },
+  "errorPlayerOrFormUnavailable": {
+    "message": "Плеер или форма недоступны"
+  },
+  "errorServerResponse": {
+    "message": "Сервер вернул {status}",
+    "placeholders": {
+      "status": {
+        "content": "$1"
+      }
+    }
+  },
+  "errPreferencesInvalidPatch": {
+    "message": "Изменения настроек VACNET недопустимы."
+  },
+  "errPreferencesInvalidStoredValue": {
+    "message": "Настройки VACNET изменились и содержат недопустимое значение."
+  },
+  "errReviewVideoMetadataLoadFailed": {
+    "message": "Не удалось загрузить метаданные видео VACNET."
+  },
+  "errReviewVideoMetadataTimeout": {
+    "message": "Истекло время ожидания загрузки метаданных видео VACNET."
+  },
+  "errReviewVideoSeekFailed": {
+    "message": "Не удалось перейти к нужному моменту видео VACNET."
+  },
+  "errUnhandledDeduplicationStatus": {
+    "message": "Неизвестный статус дедупликации клипа: {p1}",
+    "placeholders": {
+      "p1": {
+        "content": "$1"
+      }
+    }
+  },
+  "errUnhandledHistoryMutation": {
+    "message": "Неизвестная мутация истории: {p1}",
+    "placeholders": {
+      "p1": {
+        "content": "$1"
+      }
+    }
+  },
+  "errUnhandledIsolatedEvent": {
+    "message": "Неизвестное изолированное событие: {p1}",
+    "placeholders": {
+      "p1": {
+        "content": "$1"
+      }
+    }
+  },
+  "errUnhandledMainWorldEvent": {
+    "message": "Неизвестное событие главного мира: {p1}",
+    "placeholders": {
+      "p1": {
+        "content": "$1"
+      }
+    }
+  },
+  "errUnhandledPlayerCommand": {
+    "message": "Неизвестная команда плеера: {p1}",
+    "placeholders": {
+      "p1": {
+        "content": "$1"
+      }
+    }
+  },
+  "errUseTranslationOutsideProvider": {
+    "message": "useTranslation должен использоваться внутри TranslationProvider."
+  },
+  "errValveCurrentFormRemoved": {
+    "message": "Текущая форма вердикта Valve была удалена до перехода на страницу."
+  },
+  "errValveDisallowedActionUrl": {
+    "message": "Ответ Valve содержит запрещенный URL отправки формы вердикта: \"{p1}\"",
+    "placeholders": {
+      "p1": {
+        "content": "$1"
+      }
+    }
+  },
+  "errValveDisallowedVideoUrl": {
+    "message": "Страница Valve содержит запрещенный URL источника видео: \"{p1}\"",
+    "placeholders": {
+      "p1": {
+        "content": "$1"
+      }
+    }
+  },
+  "errValveFormNoAction": {
+    "message": "У формы вердикта Valve нет URL для отправки."
+  },
+  "errValveFormNoTaskField": {
+    "message": "Форма вердикта Valve не содержит поля задачи."
+  },
+  "errValveFormNotFound": {
+    "message": "Форма вердикта Valve не найдена."
+  },
+  "errValveFormTaskFieldCount": {
+    "message": "Форма вердикта Valve должна содержать ровно одно поле задачи."
+  },
+  "errValveHttpStatus": {
+    "message": "Valve вернула HTTP статус {p1}.",
+    "placeholders": {
+      "p1": {
+        "content": "$1"
+      }
+    }
+  },
+  "errValveInvalidFormField": {
+    "message": "Недопустимое поле формы Valve: {p1} (тип: {p2}, длина: {p3})",
+    "placeholders": {
+      "p1": {
+        "content": "$1"
+      },
+      "p2": {
+        "content": "$2"
+      },
+      "p3": {
+        "content": "$3"
+      }
+    }
+  },
+  "errValveInvalidTaskField": {
+    "message": "Форма вердикта Valve содержит недопустимое поле задачи (тип: {p1}, длина: {p2}).",
+    "placeholders": {
+      "p1": {
+        "content": "$1"
+      },
+      "p2": {
+        "content": "$2"
+      }
+    }
+  },
+  "errValveNextFormMissing": {
+    "message": "Ответ Valve не содержит следующую форму вердикта."
+  },
+  "errValveNextFormNoAction": {
+    "message": "Ответ Valve содержит форму вердикта без URL для отправки."
+  },
+  "errValveNextFormNoActionUrl": {
+    "message": "У следующей формы вердикта Valve нет URL для отправки."
+  },
+  "errValveNextPageNoForm": {
+    "message": "Следующая страница Valve не содержит форму вердикта."
+  },
+  "errValveNextUnexpectedActionUrl": {
+    "message": "Следующая форма вердикта Valve имеет неожиданный URL отправки: \"{p1}\"",
+    "placeholders": {
+      "p1": {
+        "content": "$1"
+      }
+    }
+  },
+  "errValveNextUnsupportedMethod": {
+    "message": "Неподдерживаемый метод следующей формы вердикта Valve: {p1}.",
+    "placeholders": {
+      "p1": {
+        "content": "$1"
+      }
+    }
+  },
+  "errValveNoClipCounter": {
+    "message": "Текущая страница Valve не содержит счетчик клипов."
+  },
+  "errValveNoClipCounterTransition": {
+    "message": "Текущая страница Valve не содержит счетчик клипов, необходимый для перехода."
+  },
+  "errValveNoTaskId": {
+    "message": "На странице Valve нет ID задачи вердикта."
+  },
+  "errValveNoTiming": {
+    "message": "На странице Valve нет действительного тайминга клипа."
+  },
+  "errValveNoVideoContainer": {
+    "message": "Страница Valve не содержит контейнер для видео."
+  },
+  "errValveNoVideoSource": {
+    "message": "На странице Valve нет источника видео."
+  },
+  "errValveUnexpectedEndpoint": {
+    "message": "Неожиданный адрес отправки вердикта Valve: \"{p1}\"",
+    "placeholders": {
+      "p1": {
+        "content": "$1"
+      }
+    }
+  },
+  "errValveUnexpectedPageUrl": {
+    "message": "Ответ Valve содержит неожиданный URL страницы: \"{p1}\"",
+    "placeholders": {
+      "p1": {
+        "content": "$1"
+      }
+    }
+  },
+  "errValveUnexpectedResponseUrl": {
+    "message": "Valve вернула неожиданный URL ответа."
+  },
+  "errValveUnsupportedContentType": {
+    "message": "Valve вернула неподдерживаемый тип контента: {p1}.",
+    "placeholders": {
+      "p1": {
+        "content": "$1"
+      }
+    }
+  },
+  "errValveUnsupportedMethod": {
+    "message": "Неподдерживаемый метод формы вердикта Valve: {p1}.",
+    "placeholders": {
+      "p1": {
+        "content": "$1"
+      }
+    }
+  },
+  "errValveVideoElementSeekFailed": {
+    "message": "Не удалось перейти к следующему клипу в видео Valve."
+  },
+  "errValveVideoJsMetadataTimeout": {
+    "message": "Истекло время ожидания загрузки метаданных Valve Video.js."
+  },
+  "errValveVideoJsSourceLoadFailed": {
+    "message": "Не удалось загрузить следующий источник Valve Video.js."
+  },
+  "errVerdictAcceptedHistoryFailed": {
+    "message": "Вердикт принят, но сохранить историю не удалось: {error}",
+    "placeholders": {
+      "error": {
+        "content": "$1"
+      }
+    }
+  },
+  "errVideoJsEarlyConfig": {
+    "message": "Video.js не может быть настроен до инициализации VACNET."
+  },
+  "errVideoJsNotFound": {
+    "message": "Плеер Video.js от Valve не найден."
+  },
+  "errVideoJsUnavailable": {
+    "message": "Плеер Video.js от Valve недоступен."
+  },
+  "errVideoOperationTimeout": {
+    "message": "Истекло время ожидания операции: {operation}.",
+    "placeholders": {
+      "operation": {
+        "content": "$1"
+      }
+    }
+  },
+  "eventTime": {
+    "message": "Время события"
+  },
+  "extensionDescription": {
+    "message": "Мощное расширение для VacNet сайта, с удобным интерфейсом, разблокированными функциями, и удобными твиками."
+  },
+  "extensionName": {
+    "message": "VacNet Toolkit Extension"
+  },
+  "frameDuration": {
+    "message": "Длительность кадра"
+  },
+  "hideNickname": {
+    "message": "Скрыть никнейм"
+  },
+  "hideNicknameHint": {
+    "message": "Скрыть отображение никнейма в верхней панели"
+  },
+  "historyLogTitle": {
+    "message": "Журнал клипов"
+  },
+  "historyMatch": {
+    "message": "Матч"
+  },
+  "historyMatchSummary": {
+    "message": "Матч {match} - {date}",
+    "placeholders": {
+      "date": {
+        "content": "$2"
+      },
+      "match": {
+        "content": "$1"
+      }
+    }
+  },
+  "historyTasks": {
+    "message": "заданий"
+  },
+  "hotkeyHelp": {
+    "message": "1–9: пресеты вердиктов · R: начало клипа · Z: масштаб · E: событие · Пробел: пауза · Enter: отправить · Backspace: пропустить · Стрелки: покадрово · [ / ]: скорость воспроизведения"
+  },
+  "hotkeyTitle": {
+    "message": "Горячие клавиши"
+  },
+  "inviteReviewers": {
+    "message": "Пригласить"
+  },
+  "keepControlsVisible": {
+    "message": "Закрепить панель плеера"
+  },
+  "keepControlsVisibleHint": {
+    "message": "Панель управления плеером не будет скрываться"
+  },
+  "labelAimAssist": {
+    "message": "Помощь в прицеливании"
+  },
+  "labelAutoBhop": {
+    "message": "Автопрыжок"
+  },
+  "labelBot": {
+    "message": "Бот-игрок"
+  },
+  "labelWallHack": {
+    "message": "Видит сквозь стены"
+  },
+  "language": {
+    "message": "Язык"
+  },
+  "legacy": {
+    "message": "Устаревшее значение"
+  },
+  "logout": {
+    "message": "Выйти"
+  },
+  "matchDate": {
+    "message": "Дата клипа"
+  },
+  "noClipHistory": {
+    "message": "История клипов пуста"
+  },
+  "noInvites": {
+    "message": "Приглашения недоступны. Продолжайте проверять клипы, чтобы получить больше приглашений."
+  },
+  "nicknameReplacement": {
+    "message": "Проверяющий "
+  },
+  "none": {
+    "message": "нет"
+  },
+  "notAvailable": {
+    "message": "Н/Д"
+  },
+  "notFound": {
+    "message": "не найдено"
+  },
+  "openVideo": {
+    "message": "Открыть видео"
+  },
+  "playerId": {
+    "message": "ID плеера"
+  },
+  "playerSettings": {
+    "message": "Настройки"
+  },
+  "plyrRuntime": {
+    "message": "Среда выполнения Plyr"
+  },
+  "presetColor": {
+    "message": "Цвет акцента"
+  },
+  "presetColorBlue": {
+    "message": "Синий"
+  },
+  "presetColorCyan": {
+    "message": "Бирюзовый"
+  },
+  "presetColorGold": {
+    "message": "Золотой"
+  },
+  "presetColorGreen": {
+    "message": "Зелёный"
+  },
+  "presetColorOrange": {
+    "message": "Оранжевый"
+  },
+  "presetColorPink": {
+    "message": "Розовый"
+  },
+  "presetColorPurple": {
+    "message": "Фиолетовый"
+  },
+  "presetColorRed": {
+    "message": "Красный"
+  },
+  "presetColorSlate": {
+    "message": "Серый"
+  },
+  "presetName": {
+    "message": "Название"
+  },
+  "presetNameDuplicate": {
+    "message": "Названия пресетов должны быть уникальны"
+  },
+  "presetPanelHint": {
+    "message": "Открыть пресеты вердиктов"
+  },
+  "presetPanelTitle": {
+    "message": "Пресеты"
+  },
+  "previousVerdicts": {
+    "message": "Предыдущие вердикты"
+  },
+  "processedAt": {
+    "message": "Обработан"
+  },
+  "questionAimAssist": {
+    "message": "Использует ли подозреваемый помощь в прицеливании для резкого наведения на противников или мгновенной стрельбы при появлении противника в прицеле?"
+  },
+  "questionAutoBhop": {
+    "message": "Использует ли подозреваемый помощь для точного выбора момента прыжка при приземлении, чтобы увеличить скорость передвижения?"
+  },
+  "questionBot": {
+    "message": "Выглядит ли подозреваемый полностью автоматизированным?"
+  },
+  "questionWallHack": {
+    "message": "Использует ли подозреваемый просмотр сквозь стены, пол, дым, ослепление или другие препятствия, чтобы видеть противников?"
+  },
+  "recentClips": {
+    "message": "Последние видео"
+  },
+  "resetVerdicts": {
+    "message": "Сбросить"
+  },
+  "reviewInstructions": {
+    "message": "Инструкции к проверке"
+  },
+  "savedClips": {
+    "message": "Оцененные клипы"
+  },
+  "savedInLocalHistory": {
+    "message": "Сохранено в локальной истории"
+  },
+  "savePreset": {
+    "message": "Сохранить"
+  },
+  "shareClip": {
+    "message": "Поделиться клипом"
+  },
+  "sourceApp": {
+    "message": "App"
+  },
+  "sourceBtnBack": {
+    "message": "Back"
+  },
+  "sourceBtnConfirm": {
+    "message": "Confirm"
+  },
+  "sourceBtnProceed": {
+    "message": "Proceed"
+  },
+  "sourceBtnReportBadClip": {
+    "message": "Report Bad Clip"
+  },
+  "sourceBtnSendFeedback": {
+    "message": "Send Feedback"
+  },
+  "sourceBtnUncertain": {
+    "message": "Uncertain"
+  },
+  "sourceClipDetails": {
+    "message": "Clip Details"
+  },
+  "sourceClipSelectionNotice": {
+    "message": "Clip selection is not a representative sample of gameplay."
+  },
+  "sourceClipsLabeled": {
+    "message": "Clips Labeled:"
+  },
+  "sourceCs2VideoReview": {
+    "message": "CS2 Video Review"
+  },
+  "sourceDevMetricsTitle": {
+    "message": "Developer Metrics"
+  },
+  "sourceInviteReviewers": {
+    "message": "Invite Reviewers"
+  },
+  "sourceLabelAimAssist": {
+    "message": "Aim Assist"
+  },
+  "sourceLabelAutoBhop": {
+    "message": "Auto BHop"
+  },
+  "sourceLabelBot": {
+    "message": "Bot Player"
+  },
+  "sourceLabelWallHack": {
+    "message": "Wall Hack"
+  },
+  "sourceLogout": {
+    "message": "Logout"
+  },
+  "sourceNoInvites": {
+    "message": "You have no invites available. Earn more by continuing to label clips."
+  },
+  "sourceNone": {
+    "message": "none"
+  },
+  "sourceQuestionAimAssist": {
+    "message": "Is the Suspect using Aim Assist to snap to opponents or instantly firing when an opponent enters the Suspect's crosshair?"
+  },
+  "sourceQuestionAutoBhop": {
+    "message": "Is the Suspect using assistance to time their jump inputs at the exact moment they land to increase movement speed?"
+  },
+  "sourceQuestionBot": {
+    "message": "Does the Suspect look fully automated?"
+  },
+  "sourceQuestionWallHack": {
+    "message": "Is the Suspect using Wall Hacks to see enemy players through walls, floors, smokes, while flashed, or other obstacles?"
+  },
+  "sourceStatusPleaseWait": {
+    "message": "Please Wait..."
+  },
+  "sourceStatusSubmitting": {
+    "message": "Submitting..."
+  },
+  "sourceTaskId": {
+    "message": "Task ID"
+  },
+  "sourceUncertainNotice": {
+    "message": "It is fine (and expected) that you will often select \"Uncertain.\" Please be certain if you make any other selection."
+  },
+  "sourceVerdictTrainingNotice": {
+    "message": "The player you are watching will not be directly affected by your verdict. Rather, labels may be used to train future VACNet models."
+  },
+  "sourceWatchClipInstructions": {
+    "message": "Please watch the clip with audio and answer the question(s) presented."
+  },
+  "sourceXrayActive": {
+    "message": "X-Ray is active."
+  },
+  "statusLoadingNextClip": {
+    "message": "Загружается следующий клип..."
+  },
+  "statusPleaseWait": {
+    "message": "Подождите..."
+  },
+  "statusSubmitting": {
+    "message": "Отправка..."
+  },
+  "stretchVideo": {
+    "message": "Растянуть видео"
+  },
+  "taskId": {
+    "message": "ID задания"
+  },
+  "technicalData": {
+    "message": "Технические данные"
+  },
+  "timeRangeSeconds": {
+    "message": "{start}-{end} с",
+    "placeholders": {
+      "end": {
+        "content": "$2"
+      },
+      "start": {
+        "content": "$1"
+      }
+    }
+  },
+  "timeSeconds": {
+    "message": "{time} с",
+    "placeholders": {
+      "time": {
+        "content": "$1"
+      }
+    }
+  },
+  "totalClipsViewed": {
+    "message": "Всего просмотрено"
+  },
+  "triggerCountdown": {
+    "message": "Триггер VacNet через [time]..."
+  },
+  "triggerFlash": {
+    "message": "⚠️ Триггер VacNet"
+  },
+  "triggerMarkerLabel": {
+    "message": "Триггер VacNet"
+  },
+  "uncertainNotice": {
+    "message": "Вариант «Не уверен» — это нормально и допустимо. Выносите другой вердикт, если абсолютно уверены в нём."
+  },
+  "unknownDate": {
+    "message": "Неизвестно (Legacy)"
+  },
+  "uploadVideoHistory": {
+    "message": "Загрузить базу"
+  },
+  "uploadVideoHistoryHint": {
+    "message": "Загрузить локальную базу вердиктов из файла JSON"
+  },
+  "verdict": {
+    "message": "Вердикт"
+  },
+  "verdictTitle": {
+    "message": "Оцените запись игры и определите наличие стороннего ПО, скриптов или автоматизации у подозреваемого."
+  },
+  "verdictTrainingNotice": {
+    "message": "Ваши вердикты не блокируют игроков напрямую, а служат базой данных для обучения системы VacNet."
+  },
+  "version": {
+    "message": "Версия"
+  },
+  "videoId": {
+    "message": "ID видео"
+  },
+  "videoJsCaptions": {
+    "message": "Субтитры"
+  },
+  "videoJsClose": {
+    "message": "Закрыть"
+  },
+  "videoJsDone": {
+    "message": "Готово"
+  },
+  "videoJsExitFullscreen": {
+    "message": "Выйти из полноэкранного режима"
+  },
+  "videoJsFullscreen": {
+    "message": "Полный экран"
+  },
+  "videoJsMute": {
+    "message": "Выключить звук"
+  },
+  "videoJsPause": {
+    "message": "Пауза"
+  },
+  "videoJsPlay": {
+    "message": "Воспроизвести"
+  },
+  "videoJsPlaybackRate": {
+    "message": "Скорость воспроизведения"
+  },
+  "videoJsProgressBar": {
+    "message": "Шкала воспроизведения"
+  },
+  "videoJsReset": {
+    "message": "Сбросить"
+  },
+  "videoJsSubtitles": {
+    "message": "Субтитры"
+  },
+  "videoJsUnmute": {
+    "message": "Включить звук"
+  },
+  "videoJsVideoPlayer": {
+    "message": "Видеоплеер"
+  },
+  "videoJsVolumeLevel": {
+    "message": "Громкость"
+  },
+  "watchClipInstructions": {
+    "message": "Ознакомьтесь с информацией ниже:"
+  },
+  "webmUrl": {
+    "message": "URL WebM"
+  },
+  "xrayActive": {
+    "message": "X-Ray включён, игроки видны сквозь препятствия для удобства анализа поведения."
+  }
+}
