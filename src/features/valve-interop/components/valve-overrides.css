@@ -1,0 +1,481 @@
+html[data-vacnet-booting='true'] {
+  background: var(--bg-base);
+}
+
+html[data-vacnet-booting='true'] body {
+  visibility: hidden !important;
+  background-image: none !important;
+}
+
+html[data-theme='dark'],
+html[data-theme='light'] {
+  background-color: var(--bg-base);
+}
+
+body.vacnet-extension-root {
+  --vacnet-surface: var(--bg-header);
+  background: var(--bg-base) !important;
+  color: var(--text-primary) !important;
+  height: 100vh;
+  margin: 0;
+  overflow: hidden;
+}
+
+body.vacnet-extension-root .page-container {
+  background: var(--bg-base) !important;
+  color: var(--text-primary) !important;
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  box-sizing: border-box;
+}
+
+body.vacnet-extension-root .PageHeader {
+  min-height: 59px;
+  box-sizing: border-box;
+  flex: 0 0 59px;
+  padding-top: 12px;
+  padding-bottom: 12px;
+  background: var(--bg-header) !important;
+  border-bottom-color: var(--border-subtle) !important;
+}
+
+body.vacnet-extension-root .verdict-desc,
+body.vacnet-extension-root footer a,
+body.vacnet-extension-root .footer-container a {
+  color: var(--success-text) !important;
+}
+
+body.vacnet-extension-root .submitverdictbutton {
+  color: var(--success-on-surface) !important;
+  background: var(--success-surface) !important;
+  border-color: var(--success-surface) !important;
+}
+
+body.vacnet-extension-root footer,
+body.vacnet-extension-root .footer-container,
+body.vacnet-extension-root .footer-container .footer-buttons {
+  background: var(--bg-footer) !important;
+  color: var(--text-primary) !important;
+  border-color: var(--border-subtle) !important;
+}
+
+body.vacnet-extension-root .footer-container p,
+body.vacnet-extension-root .footer-container div,
+body.vacnet-extension-root .footer-container span {
+  color: var(--text-primary) !important;
+}
+
+body.vacnet-extension-root .PageHeader .right {
+  align-items: center !important;
+  gap: 1em !important;
+}
+
+body.vacnet-extension-root .PageHeader .right>* {
+  align-self: center;
+}
+
+body.vacnet-extension-root .PageHeader .right>p {
+  display: flex;
+  align-items: center;
+  margin: 0;
+}
+
+body.vacnet-extension-root .PageHeader>vacnet-extension-ui,
+body.vacnet-extension-root .PageHeader>[data-wxt-shadow-root] {
+  align-self: center;
+}
+
+body.vacnet-extension-root footer button,
+body.vacnet-extension-root .footer-container button {
+  color: var(--text-primary) !important;
+  background: var(--bg-elevated) !important;
+  border-color: var(--border-medium) !important;
+}
+
+body.vacnet-extension-root .flex-row-wrap {
+  width: 100%;
+  max-width: min(1800px, calc((100vh - 140px) * 16 / 9 + 458px));
+  transition: max-width 0.22s ease;
+  flex: 0 1 auto;
+  flex-wrap: nowrap;
+  align-items: stretch;
+  gap: 20px;
+  margin: auto;
+  padding: 0 24px;
+  box-sizing: border-box;
+  min-height: 0;
+}
+
+body.vacnet-extension-root.vacnet-preset-panel-open .flex-row-wrap {
+  max-width: min(1940px, calc((100vh - 140px) * 16 / 9 + 598px));
+}
+
+body.vacnet-extension-root .video-column {
+  display: flex;
+  flex: 1 1 auto;
+  flex-direction: column;
+  min-width: 0;
+}
+
+body.vacnet-extension-root .video-column .top-section,
+body.vacnet-extension-root .verdict-column .top-section-logo,
+body.vacnet-extension-root .verdict-column .verdicts-container,
+body.vacnet-extension-root .ClipCount {
+  display: none !important;
+}
+
+body.vacnet-extension-root[data-theme='light'] img.CSLogo {
+  filter: brightness(0.15);
+}
+
+body.vacnet-extension-root .vacnet-github-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  margin-left: 20px;
+  color: var(--text-strong);
+  text-decoration: none;
+  opacity: 0.7;
+  transition: opacity 0.2s, color 0.2s;
+  vertical-align: middle;
+}
+
+body.vacnet-extension-root .vacnet-github-btn:hover {
+  opacity: 1;
+}
+
+
+body.vacnet-extension-root[data-theme='light'] .invitebutton,
+body.vacnet-extension-root[data-theme='light'] .invitebutton:visited {
+  background: var(--info-surface) !important;
+  color: var(--info-on-surface) !important;
+  border-color: transparent !important;
+}
+
+body.vacnet-extension-root .PageHeader .right>p:has(> a[href*='/oauth/logout']) {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  flex: 0 0 auto;
+  margin: 0;
+}
+
+body.vacnet-extension-root .PageHeader .right>p>a[href*='/oauth/logout'] {
+  display: inline-flex;
+  min-width: 84px;
+  min-height: 35px;
+  box-sizing: border-box;
+  align-items: center;
+  justify-content: center;
+  padding: 0 12px;
+  color: var(--text-primary) !important;
+  background: var(--bg-elevated) !important;
+  border: 1px solid var(--border-medium) !important;
+  border-radius: 4px;
+  font-size: 14px;
+  font-weight: 600;
+  line-height: 1.2;
+  text-decoration: none;
+  white-space: nowrap;
+  transition: none;
+}
+
+body.vacnet-extension-root .PageHeader .right>p>a[href*='/oauth/logout']:hover,
+body.vacnet-extension-root .PageHeader .right>p>a[href*='/oauth/logout']:focus-visible {
+  color: var(--text-strong) !important;
+  background: var(--bg-hover) !important;
+  border-color: var(--border-strong) !important;
+}
+
+
+body.vacnet-extension-root[data-theme='light'] .footer-container,
+body.vacnet-extension-root[data-theme='light'] footer,
+body.vacnet-extension-root[data-theme='light'] footer div,
+body.vacnet-extension-root[data-theme='light'] footer p,
+body.vacnet-extension-root[data-theme='light'] .footer-container p {
+  color: var(--text-primary) !important;
+}
+
+body.vacnet-extension-root[data-theme='light'] .verdictbutton {
+  color: var(--text-primary) !important;
+  background: transparent !important;
+  border: 1px solid var(--border-medium) !important;
+  box-shadow: none;
+}
+
+body.vacnet-extension-root[data-theme='light'] .verdictbutton:has(input[type='radio']:checked) {
+  background: var(--bg-hover) !important;
+  border-color: var(--text-secondary) !important;
+}
+
+body.vacnet-extension-root[data-theme='light'] .verdictbutton:hover {
+  background: var(--bg-subtle) !important;
+}
+
+
+body.vacnet-extension-root .videocontainer {
+  position: relative;
+  width: 100% !important;
+  height: auto !important;
+  overflow: hidden;
+  aspect-ratio: 16 / 9;
+  border-radius: 7px;
+}
+
+body.vacnet-extension-root .videocontainer>.vacnet-review-player-host {
+  position: absolute !important;
+  inset: 0 !important;
+  width: 100% !important;
+  height: 100% !important;
+  border-radius: inherit;
+}
+
+body.vacnet-extension-root .videocontainer>.video-js,
+body.vacnet-extension-root .videocontainer video.vjs-tech {
+  display: none !important;
+}
+
+body.vacnet-extension-root .vacnet-review-player-host video,
+body.vacnet-extension-root .videocontainer video.vjs-tech {
+  width: 100% !important;
+  height: 100% !important;
+  object-fit: contain;
+  transition: transform 0.2s ease, opacity 0.15s ease;
+}
+
+body.vacnet-extension-root .vacnet-review-player-host .plyr {
+  width: 100%;
+  height: 100%;
+  border-radius: inherit;
+  --plyr-color-main: var(--accent-strong);
+  --plyr-video-background: transparent;
+  --plyr-menu-background: var(--player-menu);
+  --plyr-menu-color: var(--text-strong);
+  --plyr-tooltip-background: var(--plyr-menu-background);
+  --plyr-tooltip-color: var(--plyr-menu-color);
+}
+
+body.vacnet-extension-root .vacnet-review-player-host.vacnet-video-stretched video,
+body.vacnet-extension-root .videocontainer .vjs-tech.vacnet-video-stretched {
+  object-fit: fill !important;
+}
+
+body.vacnet-extension-root .vacnet-review-player-host.vacnet-zoom-active,
+body.vacnet-extension-root .videocontainer .vjs-tech.vacnet-zoom-active {
+  transform: scale(2);
+  transform-origin: center;
+}
+
+body.vacnet-extension-root .vacnet-review-player-host.vacnet-video-loading,
+body.vacnet-extension-root .videocontainer .vjs-tech.vacnet-video-loading {
+  opacity: 0;
+}
+
+body.vacnet-extension-root .verdict-column {
+  position: relative !important;
+  display: flex;
+  flex: 0 0 460px;
+  flex-direction: column;
+  transition: width 0.22s ease, flex-basis 0.22s ease;
+}
+
+body.vacnet-extension-root.vacnet-preset-panel-open .verdict-column {
+  width: 600px;
+  flex-basis: 600px;
+}
+
+body.vacnet-extension-root .plyr__volume {
+  position: relative;
+}
+
+body.vacnet-extension-root .plyr__volume.plyr__menu .plyr__control[aria-expanded='true'] svg {
+  transform: none;
+}
+
+body.vacnet-extension-root .vacnet-volume-menu {
+  bottom: 100%;
+  left: calc(50% - 30px);
+  right: auto;
+  width: 60px;
+  white-space: normal;
+}
+
+body.vacnet-extension-root .vacnet-volume-menu::after {
+  right: auto;
+  left: calc(50% - 4px);
+}
+
+body.vacnet-extension-root .vacnet-volume-menu__content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  padding: var(--plyr-control-padding, 10px);
+  padding-bottom: calc(var(--plyr-control-padding, 10px) + 8px);
+}
+
+body.vacnet-extension-root .vacnet-volume-menu__percentage {
+  display: block;
+  min-width: 40px;
+  color: var(--plyr-menu-color, var(--text-strong));
+  font-size: var(--plyr-font-size-base, 15px);
+  font-weight: var(--plyr-font-weight-regular, 400);
+  line-height: 1;
+  text-align: center;
+}
+
+body.vacnet-extension-root .vacnet-volume-menu__slider-track {
+  position: relative;
+  width: 24px;
+  height: 128px;
+}
+
+body.vacnet-extension-root .vacnet-volume-menu__slider-track::before,
+body.vacnet-extension-root .vacnet-volume-menu__slider-track::after {
+  position: absolute;
+  left: 50%;
+  width: 4px;
+  content: '';
+  transform: translateX(-50%);
+}
+
+body.vacnet-extension-root .vacnet-volume-menu__slider-track::before {
+  top: 0;
+  bottom: 8px;
+  border-radius: 2px;
+  background: var(--plyr-video-range-track-background, var(--player-track));
+}
+
+body.vacnet-extension-root .vacnet-volume-menu__slider-track::after {
+  bottom: 8px;
+  height: var(--value-height, 0px);
+  border-radius: 2px;
+  background: var(--plyr-range-fill-background, var(--plyr-color-main, var(--accent-strong)));
+}
+
+body.vacnet-extension-root .vacnet-volume-menu__slider-thumb {
+  position: absolute;
+  bottom: var(--value-height, 0px);
+  left: 50%;
+  z-index: 1;
+  width: 16px;
+  height: 8px;
+  border-radius: 999px;
+  background: var(--plyr-range-thumb-background, var(--text-strong));
+  box-shadow: var(--plyr-range-thumb-shadow, 0 1px 1px var(--player-shadow));
+  pointer-events: none;
+  transform: translateX(-50%);
+}
+
+body.vacnet-extension-root .vacnet-volume-menu__slider-track:has(.vacnet-volume-menu__slider:focus-visible) {
+  outline: 2px dashed var(--plyr-focus-visible-color, var(--text-strong));
+  outline-offset: 2px;
+}
+
+body.vacnet-extension-root .vacnet-volume-menu__slider {
+  position: absolute;
+  inset: 0;
+  z-index: 2;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  cursor: pointer;
+  touch-action: none;
+  appearance: none;
+  background: transparent;
+  border: 0;
+  border-radius: 0 !important;
+  writing-mode: vertical-lr;
+  direction: rtl;
+  opacity: 0;
+  pointer-events: none;
+}
+
+body.vacnet-extension-root .vacnet-review-player-host .plyr__control--overlaid {
+  display: none !important;
+}
+
+body.vacnet-extension-root .vacnet-keep-controls .plyr__controls {
+  opacity: 1 !important;
+  visibility: visible !important;
+  transform: none !important;
+  pointer-events: auto !important;
+}
+
+body.vacnet-extension-root .plyr__progress__marker {
+  background-color: var(--danger-surface-strong) !important;
+  width: 4px !important;
+  height: 14px !important;
+  border-radius: 2px !important;
+  box-shadow: 0 0 5px color-mix(in oklch, var(--danger-surface-strong) 80%, transparent);
+  z-index: 2147483647;
+}
+
+@media (max-width: 900px) {
+  body.vacnet-extension-root {
+    height: auto;
+    min-height: 100vh;
+    overflow: auto;
+  }
+
+  body.vacnet-extension-root .page-container {
+    height: auto;
+    min-height: 100vh;
+  }
+
+  body.vacnet-extension-root .flex-row-wrap {
+    width: auto;
+    flex-wrap: wrap;
+    padding: 44px 12px 24px;
+  }
+
+  body.vacnet-extension-root .video-column,
+  body.vacnet-extension-root .verdict-column,
+  body.vacnet-extension-root .size-for-column,
+  body.vacnet-extension-root .videocontainer {
+    width: calc(100vw - 24px);
+    max-width: calc(100vw - 24px);
+  }
+
+  body.vacnet-extension-root .verdict-column {
+    flex-basis: auto;
+  }
+
+  body.vacnet-extension-root .footer-container {
+    position: static;
+    margin-top: 20px;
+  }
+}
+
+body.vacnet-extension-root .invitebutton {
+  word-spacing: -3px;
+}
+
+body.vacnet-extension-root .vacnet-speed-overlay {
+  position: absolute;
+  bottom: 48px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: var(--plyr-menu-background, var(--player-menu));
+  color: var(--text-strong);
+  padding: 8px 16px;
+  border-radius: 6px;
+  box-shadow: 0 4px 14px color-mix(in oklch, var(--bg-base) 30%, transparent);
+  font-size: 16px;
+  font-weight: bold;
+  line-height: 1;
+  pointer-events: none;
+  z-index: 2147483647;
+  opacity: 1;
+  transition: opacity 0.3s ease;
+}
+
+
+@media (prefers-reduced-motion: reduce) {
+
+  body.vacnet-extension-root .vacnet-review-player-host video,
+  body.vacnet-extension-root .videocontainer video.vjs-tech {
+    transition: none;
+  }
+}

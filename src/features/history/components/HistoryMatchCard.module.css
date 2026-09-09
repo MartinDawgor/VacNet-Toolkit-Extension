@@ -1,0 +1,47 @@
+.item {
+  position: relative;
+  margin: 0 0 8px;
+  background: var(--bg-surface);
+  border: 1px solid var(--border-subtle);
+  border-radius: 5px;
+}
+
+.item summary {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 10px;
+  padding: 9px 10px;
+  color: var(--text-primary);
+  font-size: 12px;
+  cursor: pointer;
+}
+
+.item summary > span { min-width: 0; overflow: hidden; font-family: var(--font-mono); text-overflow: ellipsis; white-space: nowrap; }
+.item[open] summary { color: var(--accent-primary); border-bottom: 1px solid var(--border-subtle); }
+.taskTrigger { position: absolute; top: 10px; right: 10px; z-index: 2; display: inline-block; padding: 0; color: var(--accent-primary); background: transparent; border: 0; cursor: pointer; font: inherit; font-size: 11px; }
+.taskTrigger:focus-visible { outline: 1px solid var(--accent-primary); outline-offset: 3px; }
+.taskTrigger:hover, .taskTrigger:focus-visible { color: var(--text-primary); }
+.taskTooltip { position: absolute; top: calc(100% + 8px); right: 0; z-index: 3; display: none; width: max-content; max-width: 260px; max-height: 180px; overflow: auto; padding: 8px 10px; color: var(--text-primary); background: var(--bg-surface); border: 1px solid var(--border-medium); border-radius: 4px; box-shadow: 0 8px 20px var(--shadow-default); font-family: var(--font-mono); font-size: 11px; line-height: 1.55; }
+.taskTooltip span { display: block; }
+.taskTrigger:hover .taskTooltip, .taskTrigger:focus-visible .taskTooltip { display: block; }
+.content { padding: 10px; }
+.tools { display: flex; align-items: center; justify-content: space-between; gap: 10px; padding-bottom: 9px; color: var(--text-muted); border-bottom: 1px solid var(--border-subtle); font-size: 11px; }
+.tools a, .clipHeader a { color: var(--accent-primary); }
+.tools span { min-width: 0; overflow-wrap: anywhere; text-align: right; }
+.videoId { margin: 0; padding: 8px 0 9px; overflow-wrap: anywhere; color: var(--text-muted); border-bottom: 1px solid var(--border-subtle); font-family: var(--font-mono); font-size: 10px; }
+.clipList { display: grid; gap: 8px; margin: 0; padding: 10px 0 0; list-style: none; }
+.clip { padding: 9px 10px; background: var(--bg-base); border: 1px solid var(--border-subtle); border-radius: 4px; }
+.clipHeader, .clipMeta { display: flex; align-items: baseline; justify-content: space-between; gap: 8px; }
+.clipHeader strong { color: var(--text-primary); font-size: 12px; }
+.clipHeader a { font-size: 12px; font-variant-numeric: tabular-nums; }
+.clipMeta { flex-wrap: wrap; justify-content: flex-start; margin-top: 5px; color: var(--text-muted); font-size: 11px; }
+.status { font-weight: 700; }
+.statusNew, .statusExact, .negative { color: var(--success-text) !important; }
+.statusSameVideo, .positive { color: var(--danger-text) !important; }
+.clip dl { display: grid; grid-template-columns: minmax(0, 1fr); gap: 4px 10px; margin: 9px 0 0; padding: 8px 0 0; border-top: 1px solid var(--border-subtle); font-size: 11px; }
+.clip dl > div { display: flex; justify-content: space-between; gap: 8px; }
+.clip dl dt { min-width: 0; color: var(--text-muted); }
+.clip dl dd { flex: 0 0 auto; margin: 0; overflow-wrap: normal; text-align: right; }
+.skip { color: var(--text-secondary) !important; }
+.badClip { display: block; padding: 8px 12px 0 25px; color: var(--danger-text) !important; font-size: 12px; font-weight: 700; }

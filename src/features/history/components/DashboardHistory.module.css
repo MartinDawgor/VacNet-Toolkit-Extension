@@ -1,0 +1,25 @@
+.section {
+  display: flex;
+  flex: 1 1 auto;
+  flex-direction: column;
+  min-height: 0;
+  margin-top: 16px;
+}
+
+.list {
+  flex: 1 1 auto;
+  min-height: 0;
+  overflow: auto;
+  scrollbar-color: var(--accent-strong) var(--bg-surface);
+  scrollbar-width: thin;
+}
+
+.empty {
+  margin: 0 0 8px;
+  padding: 9px 10px;
+  color: var(--text-primary);
+  font-size: 12px;
+  background: var(--bg-elevated);
+  border: 1px solid var(--border-subtle);
+  border-radius: 5px;
+}

@@ -1,0 +1,246 @@
+.panel {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  width: 460px;
+  display: flex;
+  flex-direction: column;
+  overflow-y: auto;
+  padding: 16px;
+  color: var(--text-primary);
+  background: var(--bg-surface);
+  border: 1px solid var(--border-subtle);
+  border-radius: 8px;
+  box-shadow: var(--shadow-panel);
+}
+
+.panel h1 {
+  margin: 0 0 6px;
+  padding-bottom: 8px;
+  color: var(--accent-primary);
+  border-bottom: 1px solid var(--border-subtle);
+  font-size: 15px;
+  line-height: 1.35;
+  text-align: center;
+}
+
+.category {
+  margin: 0;
+  padding: 8px 0;
+  border: 0;
+}
+
+.category legend {
+  width: 100%;
+  text-align: center;
+  padding-top: 2px;
+  margin-bottom: 0px;
+  color: var(--text-primary);
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+.choices {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  margin-top: 6px;
+}
+
+.choice {
+  position: relative;
+  display: grid;
+  min-height: 30px;
+  place-items: center;
+  color: var(--choice-text);
+  background: var(--choice-background);
+  border: 1px solid var(--choice-border);
+  cursor: pointer;
+  font-size: 13.5px;
+  font-weight: 600;
+}
+
+.choice:first-child {
+  border-radius: 7px 0 0 7px;
+}
+
+.choice:last-child {
+  border-radius: 0 7px 7px 0;
+}
+
+.choice input {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  opacity: 0;
+}
+
+
+
+.actions button:focus-visible {
+  outline: 2px solid var(--focus-ring);
+  outline-offset: 2px;
+}
+
+.positive:has(input:checked) {
+  color: var(--danger-on-surface);
+  background: var(--danger-surface);
+  border-color: var(--danger-surface);
+}
+
+.skip:has(input:checked) {
+  color: var(--neutral-on-surface);
+  background: var(--neutral-surface);
+  border-color: var(--neutral-surface);
+}
+
+.negative:has(input:checked) {
+  color: var(--success-on-surface);
+  background: var(--success-surface);
+  border-color: var(--success-surface);
+}
+
+.infoGrid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+  margin-top: 6px;
+}
+
+.infoGridSingle {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 10px;
+  margin-top: 6px;
+}
+
+.infoGrid .previous,
+.infoGridSingle .previous {
+  margin-top: 0;
+}
+
+.previous {
+  padding: 8px;
+  background: var(--bg-subtle);
+  border: 1px solid var(--border-subtle);
+  border-radius: 7px;
+}
+
+.previous h2 {
+  margin: 0 0 6px;
+  color: var(--accent-primary);
+  font-size: 12px;
+  text-transform: uppercase;
+  text-align: center;
+}
+
+.previous dl {
+  margin: 0;
+}
+
+.previous dl>div {
+  display: flex;
+  justify-content: space-between;
+  gap: 8px;
+  padding: 2px 0;
+  font-size: 12.5px;
+}
+
+.previous dt {
+  color: var(--details-label);
+}
+
+.previous dd {
+  margin: 0;
+  font-weight: 600;
+  color: var(--details-value);
+  font-family: var(--font-mono);
+}
+
+.valPositive {
+  color: var(--danger-text);
+}
+
+.valNegative {
+  color: var(--success-text);
+}
+
+.valSkip {
+  color: var(--text-primary);
+}
+
+
+.error,
+.status {
+  margin: 8px 0 0;
+  padding: 8px 10px;
+  border-radius: 6px;
+  text-align: center;
+}
+
+.error {
+  color: var(--danger-text);
+  background: var(--danger-panel);
+  border: 1px solid var(--danger-panel-soft);
+}
+
+.status {
+  color: var(--neutral-on-surface);
+  background: var(--neutral-surface);
+  border: 1px solid var(--neutral-surface-strong);
+}
+
+.actions {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+  margin-top: 10px;
+}
+
+.actions button {
+  min-height: 36px;
+  color: var(--success-on-surface);
+  background: linear-gradient(135deg, var(--accent-strong), var(--accent-strong));
+  border: 1px solid transparent;
+  border-radius: 7px;
+  cursor: pointer;
+  font-size: 14.5px;
+  font-weight: 700;
+}
+
+.actions button:last-child {
+  color: var(--text-primary);
+  background: var(--neutral-surface);
+  border-color: var(--neutral-surface-strong);
+}
+
+.actions button:disabled {
+  opacity: 0.55;
+  cursor: wait;
+}
+
+.clipCount {
+  margin-top: auto;
+  color: var(--text-strong);
+  font-size: 14px;
+  font-weight: 500;
+  text-align: center;
+  padding-top: 10px;
+}
+
+@media (max-width: 520px) {
+  .panel {
+    padding: 12px;
+  }
+
+  .infoGrid {
+    grid-template-columns: 1fr;
+  }
+
+  .choice,
+  .actions button {
+    min-height: 44px;
+  }
+}

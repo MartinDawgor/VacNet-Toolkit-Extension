@@ -1,0 +1,161 @@
+.appShell {
+  display: contents;
+  color: var(--text-primary);
+}
+
+.videoToolbar {
+  position: fixed;
+  top: 14px;
+  left: 50%;
+  display: flex;
+  gap: 8px;
+  transform: translateX(-50%);
+  pointer-events: auto;
+}
+
+.videoToolbar>button,
+.hoverDropdown>button {
+  display: grid;
+  width: 30px;
+  height: 30px;
+  place-items: center;
+  box-sizing: border-box;
+  color: var(--text-primary);
+  background: var(--bg-elevated);
+  border: 1px solid var(--border-medium);
+  border-radius: 5px;
+  cursor: pointer;
+  list-style: none;
+  font-weight: 700;
+}
+
+.videoToolbar>button svg,
+.hoverDropdown>button svg {
+  width: 16px;
+  height: 16px;
+}
+
+.videoToolbar>button:hover:not(.active),
+.hoverDropdown>button:hover {
+  background: var(--bg-hover);
+}
+
+.videoToolbar>button.active {
+  color: var(--success-on-surface);
+  background: var(--accent-surface);
+  border-color: var(--border-default);
+}
+
+.videoToolbar button:focus-visible,
+.hoverDropdown>button:focus-visible,
+.footerTools a:focus-visible {
+  outline: 2px solid var(--focus-ring);
+  outline-offset: 3px;
+}
+
+.hoverDropdown {
+  position: relative;
+}
+
+
+
+.hoverDropdown:hover>.dropdownContent,
+.hoverDropdown:focus-within>.dropdownContent {
+  opacity: 1;
+  visibility: visible;
+  transition-delay: 0.15s;
+}
+
+.dropdownContent {
+  position: absolute;
+  top: calc(100% + 8px);
+  left: 50%;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.15s ease, visibility 0.15s ease;
+  transition-delay: 0s;
+  width: max-content;
+  max-width: min(380px, calc(100vw - 32px));
+  transform: translateX(-50%);
+  padding: 14px;
+  box-sizing: border-box;
+  color: var(--text-primary);
+  background: var(--bg-surface);
+  border: 1px solid var(--border-subtle);
+  border-radius: 7px;
+  box-shadow: 0 14px 36px var(--shadow-default);
+  font-size: 13px;
+  line-height: 1.4;
+  text-align: center;
+}
+
+.dropdownContent hr {
+  margin: 9px 0;
+  border: 0;
+  border-top: 1px solid var(--border-subtle);
+}
+
+.dropdownList {
+  margin: 0;
+  padding: 0 0 0 22px;
+  list-style-type: disc;
+  text-align: left;
+}
+
+.dropdownList li {
+  margin: 8px 0;
+  color: var(--text-secondary);
+  line-height: 1.4;
+}
+
+.footerTools {
+  position: fixed;
+  left: 50%;
+  bottom: 30px;
+  transform: translateX(160px);
+  display: flex;
+  gap: 20px;
+  pointer-events: auto;
+  z-index: 9999;
+}
+
+.footerTools a {
+  padding: 0;
+  color: var(--accent-strong);
+  background: transparent;
+  border: 0;
+  cursor: pointer;
+  text-decoration: underline;
+}
+
+.footerTools a:hover,
+.footerTools a[aria-current='page'] {
+  color: var(--text-strong);
+}
+
+.footerTools a[aria-current='page'] {
+  font-weight: 700;
+  text-decoration-thickness: 2px;
+}
+
+@media (max-width: 700px) {
+
+  .videoToolbar {
+    gap: 4px;
+    max-width: calc(100vw - 16px);
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .videoToolbar>button,
+  .hoverDropdown>button {
+    width: 28px;
+    height: 28px;
+  }
+
+  .footerTools {
+    left: auto;
+    right: 10px;
+    transform: none;
+  }
+}
