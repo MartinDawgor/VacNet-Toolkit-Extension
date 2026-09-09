@@ -22,11 +22,11 @@
   <a href="README.md"><b>Русский</b></a>
 </p>
 
-<img src="https://github.com/user-attachments/assets/0599be24-b363-4a6d-b854-5fc599fdb630" alt="VACNET Toolkit player and verdict panel" width="100%">
+<img src="https://github.com/user-attachments/assets/43595d62-8ef1-4414-9e81-ad395ad4140e" alt="VACNET Toolkit player and verdict panel" width="100%">
 
 <p align="center">
-  <img src="https://github.com/user-attachments/assets/94f3d67c-826a-4a59-9f7c-b7f67ca8cfb5" alt="Reviewed clip history" width="45%">
-  <img src="https://github.com/user-attachments/assets/25b97ba6-73ad-44fc-9520-57d09a758af1" alt="Detailed clip information" width="45%">
+  <img src="https://github.com/user-attachments/assets/b6b80101-0bab-4ce6-ba0d-15a2aab4a8bb" alt="Reviewed clip history" width="45%">
+  <img src="https://github.com/user-attachments/assets/d7dd3344-bc31-4e1f-a223-15c98019555c" alt="Detailed clip information" width="45%">
 </p>
 
 ## 🚀 Quick start
