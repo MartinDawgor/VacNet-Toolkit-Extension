@@ -146,11 +146,13 @@ body.vacnet-extension-root .vacnet-github-btn:hover {
 }
 
 
-body.vacnet-extension-root[data-theme='light'] .invitebutton,
-body.vacnet-extension-root[data-theme='light'] .invitebutton:visited {
+body.vacnet-extension-root .invitebutton,
+body.vacnet-extension-root .invitebutton:visited {
   background: var(--info-surface) !important;
   color: var(--info-on-surface) !important;
   border-color: transparent !important;
+  transition: none !important;
+  word-spacing: -3px;
 }
 
 body.vacnet-extension-root .PageHeader .right>p:has(> a[href*='/oauth/logout']) {
@@ -446,10 +448,6 @@ body.vacnet-extension-root .plyr__progress__marker {
     position: static;
     margin-top: 20px;
   }
-}
-
-body.vacnet-extension-root .invitebutton {
-  word-spacing: -3px;
 }
 
 body.vacnet-extension-root .vacnet-speed-overlay {
