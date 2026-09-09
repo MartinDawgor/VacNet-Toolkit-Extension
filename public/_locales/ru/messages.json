@@ -722,6 +722,9 @@
   "sourceInviteReviewers": {
     "message": "Invite Reviewers"
   },
+  "sourceInviteReviewersRu": {
+    "message": "Пригласить участников"
+  },
   "sourceLabelAimAssist": {
     "message": "Aim Assist"
   },
