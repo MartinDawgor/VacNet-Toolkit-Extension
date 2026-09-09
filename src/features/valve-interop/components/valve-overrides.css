@@ -149,7 +149,7 @@ body.vacnet-extension-root .vacnet-github-btn:hover {
 body.vacnet-extension-root .invitebutton,
 body.vacnet-extension-root .invitebutton:visited {
   background: var(--info-surface) !important;
-  color: var(--info-on-surface) !important;
+  color: var(--text-strong) !important;
   border-color: transparent !important;
   transition: none !important;
   word-spacing: -3px;
