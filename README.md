@@ -27,7 +27,7 @@
 <img src="https://github.com/user-attachments/assets/0599be24-b363-4a6d-b854-5fc599fdb630" alt="Основной вид: плеер и панель вердиктов" width="100%">
 
 <p align="center">
-  <img src="https://github.com/user-attachments/assets/737b0a4a-b2d1-40c6-b6f1-7c266fd195c2" alt="Панель истории с карточками матчей" width="40%">
+  <img src="https://github.com/user-attachments/assets/94f3d67c-826a-4a59-9f7c-b7f67ca8cfb5" alt="Панель истории с карточками матчей" width="40%">
   <img src="https://github.com/user-attachments/assets/25b97ba6-73ad-44fc-9520-57d09a758af1" alt="Детали истории" width="40%">
 </p>
 
