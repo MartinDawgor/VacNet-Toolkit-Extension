@@ -24,11 +24,11 @@
 
 Это расширение снимает ограничения заложенные сайтом VacNet, заменяет плеер и предзагрузку страницы, добавляет панель вердиктов с горячими клавишами, распознаёт повторные клипы, переводит интерфейс на русский и ведёт полную историю просмотренных вердиктов, а также добавляет некоторые твики для удобства использования.
 
-<img src="https://github.com/user-attachments/assets/09926958-2f86-4576-a794-7df56f07ec3d" alt="Основной вид: плеер и панель вердиктов" width="100%">
+<img src="https://github.com/user-attachments/assets/0599be24-b363-4a6d-b854-5fc599fdb630" alt="Основной вид: плеер и панель вердиктов" width="100%">
 
 <p align="center">
   <img src="https://github.com/user-attachments/assets/737b0a4a-b2d1-40c6-b6f1-7c266fd195c2" alt="Панель истории с карточками матчей" width="40%">
-  <img src="https://github.com/user-attachments/assets/8b5f0dc0-e3d6-41cb-b7d5-34b07403fe05" alt="Детали истории" width="40%">
+  <img src="https://github.com/user-attachments/assets/25b97ba6-73ad-44fc-9520-57d09a758af1" alt="Детали истории" width="40%">
 </p>
 
 ---
