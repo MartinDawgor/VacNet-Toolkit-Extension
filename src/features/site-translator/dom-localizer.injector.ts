@@ -4,6 +4,7 @@ import type { MessageCatalog, MessageKey } from '../../shared/services/i18n.serv
 const translatedKeys: ReadonlyArray<readonly [MessageKey, MessageKey]> = [
   ['cs2VideoReview', 'sourceCs2VideoReview'],
   ['inviteReviewers', 'sourceInviteReviewers'],
+  ['inviteReviewers', 'sourceInviteReviewersRu'],
   ['noInvites', 'sourceNoInvites'],
   ['clipsLabeled', 'sourceClipsLabeled'],
   ['logout', 'sourceLogout'],
