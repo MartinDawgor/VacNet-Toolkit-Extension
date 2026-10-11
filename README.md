@@ -10,7 +10,7 @@
 </p>
 
 <p align="center">
-  <a href="https://github.com/pensiya5/VacNet-Toolkit-Extension/releases"><img alt="Версия 4.2.0" src="https://img.shields.io/badge/version-4.2.0-8fb8ff?style=flat-square"></a>
+  <a href="https://github.com/pensiya5/VacNet-Toolkit-Extension/releases"><img alt="Версия 4.2.1" src="https://img.shields.io/badge/version-4.2.1-8fb8ff?style=flat-square"></a>
   <a href="https://github.com/MartinDawgor/VacNet-Toolkit-Extension/blob/main/LICENSE"><img alt="GPL-3.0" src="https://img.shields.io/badge/license-GPL--3.0-356ea8?style=flat-square"></a>
   <img alt="Chromium Manifest V3" src="https://img.shields.io/badge/Chromium-Manifest_V3-4285F4?style=flat-square&logo=googlechrome&logoColor=white">
   <img alt="Firefox 128+" src="https://img.shields.io/badge/Firefox-128%2B-FF7139?style=flat-square&logo=firefoxbrowser&logoColor=white">
@@ -90,6 +90,11 @@ npm run check
 
 Для ручной установки выбирайте папку соответствующей сборки, а не корень репозитория. Firefox-сборка использует отдельный локальный ID `vacnet-toolkit-local@extensions.invalid`; её настройки и история хранятся отдельно от опубликованного дополнения. При необходимости перенесите историю через экспорт и импорт. Локальный архив Firefox не подписан.
 
+## Что нового в 4.2.1
+
+- Исправлено повторное выключение видео примерно через 250 мс после возобновления просмотра с выбранным вердиктом.
+- Журнал демок и метрики разработчика теперь совпадают по размеру с правой панелью на разных экранах.
+
 ## Что входит в версию 4.2.0
 
 Тема Graphite & Ice приводит интерфейс портала к единому виду: тёмные графитовые поверхности, холодный синий акцент и мягкая подсветка доступных действий. Обновлены панель проверки, история, пресеты, метрики и страницы приветствия с приглашениями. Плеер Plyr и его управление остались прежними.
@@ -146,4 +151,4 @@ VACNET Toolkit помогает просматривать записи и пе�
 
 Исходный проект создан [MartinDawgor](https://github.com/MartinDawgor) и распространяется по лицензии [GPL-3.0](https://github.com/MartinDawgor/VacNet-Toolkit-Extension/blob/main/LICENSE). Сообщить об ошибке можно в [разделе Issues](https://github.com/pensiya5/VacNet-Toolkit-Extension/issues). Поддержать автора исходного проекта можно добровольным пожертвованием через [CloudTips](https://pay.cloudtips.ru/p/f1a3b6c9).
 
-<p align="center"><sub>VACNET Toolkit Extension · 4.2.0</sub></p>
+<p align="center"><sub>VACNET Toolkit Extension · 4.2.1</sub></p>

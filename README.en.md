@@ -10,7 +10,7 @@
 </p>
 
 <p align="center">
-  <a href="https://github.com/pensiya5/VacNet-Toolkit-Extension/releases"><img alt="Version 4.2.0" src="https://img.shields.io/badge/version-4.2.0-8fb8ff?style=flat-square"></a>
+  <a href="https://github.com/pensiya5/VacNet-Toolkit-Extension/releases"><img alt="Version 4.2.1" src="https://img.shields.io/badge/version-4.2.1-8fb8ff?style=flat-square"></a>
   <a href="https://github.com/MartinDawgor/VacNet-Toolkit-Extension/blob/main/LICENSE"><img alt="GPL-3.0" src="https://img.shields.io/badge/license-GPL--3.0-356ea8?style=flat-square"></a>
   <img alt="Chromium Manifest V3" src="https://img.shields.io/badge/Chromium-Manifest_V3-4285F4?style=flat-square&logo=googlechrome&logoColor=white">
   <img alt="Firefox 128+" src="https://img.shields.io/badge/Firefox-128%2B-FF7139?style=flat-square&logo=firefoxbrowser&logoColor=white">
@@ -90,6 +90,11 @@ After adding or removing keys in `public/_locales`, run `npm run generate:i18n` 
 
 For manual installation, select the corresponding build directory instead of the repository root. The Firefox build uses a separate local ID, `vacnet-toolkit-local@extensions.invalid`, so its settings and history are separate from the published add-on. Use history export and import to transfer records if needed. The local Firefox archive is unsigned.
 
+## What's new in 4.2.1
+
+- Fixed playback stopping again about 250 ms after resuming with a verdict selected.
+- The clip history and developer metrics panels now match the right-hand verdict panel at different screen sizes.
+
 ## What's new in 4.2.0
 
 Graphite & Ice gives the portal one consistent interface: dark graphite surfaces, a cool blue accent, and a soft glow for available actions. The update covers the review panel, history, presets, metrics, welcome page, and invitation page. Plyr and its controls remain unchanged.
@@ -146,4 +151,4 @@ This project is not affiliated with Valve Corporation. Counter-Strike, Counter-S
 
 The original project was created by [MartinDawgor](https://github.com/MartinDawgor) and is distributed under the [GPL-3.0 license](https://github.com/MartinDawgor/VacNet-Toolkit-Extension/blob/main/LICENSE). Report issues in the [Issues section](https://github.com/pensiya5/VacNet-Toolkit-Extension/issues). You can support the original author with an optional [CloudTips donation](https://pay.cloudtips.ru/p/f1a3b6c9).
 
-<p align="center"><sub>VACNET Toolkit Extension · 4.2.0</sub></p>
+<p align="center"><sub>VACNET Toolkit Extension · 4.2.1</sub></p>
