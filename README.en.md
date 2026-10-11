@@ -5,7 +5,7 @@
 <h1 align="center">VACNET Toolkit Extension</h1>
 
 <p align="center">
-  VACNET Toolkit turns the standard CS2 VACNet labeling portal into a faster workspace with a modern player, verdict presets, keyboard shortcuts, and local clip history.<br>
+  VACNET Toolkit turns the CS2 VACNet labeling portal into a focused workspace with the Graphite & Ice theme, Plyr player, presets, keyboard shortcuts, and local clip history.<br>
   Spend less time waiting and repeating actions, and more time reviewing the replay.
 </p>
 
@@ -22,12 +22,16 @@
   <a href="README.md"><b>Русский</b></a>
 </p>
 
-<img src="https://github.com/user-attachments/assets/43595d62-8ef1-4414-9e81-ad395ad4140e" alt="VACNET Toolkit player and verdict panel" width="100%">
+<p align="center">
+  <img src="docs/images/review-panel-4.2.0.jpg" alt="VACNET Toolkit 4.2.0 interface: Plyr player and four-category verdict panel" width="100%">
+</p>
 
 <p align="center">
-  <img src="https://github.com/user-attachments/assets/b6b80101-0bab-4ce6-ba0d-15a2aab4a8bb" alt="Reviewed clip history" width="45%">
-  <img src="https://github.com/user-attachments/assets/d7dd3344-bc31-4e1f-a223-15c98019555c" alt="Detailed clip information" width="45%">
+  <img src="docs/images/welcome-page-4.2.0.jpg" alt="Updated VACNET welcome page in the Graphite & Ice theme" width="49%">
+  <img src="docs/images/invite-page-4.2.0.jpg" alt="VACNET invite creation page in the Graphite & Ice theme; sample link shown" width="49%">
 </p>
+
+<p align="center"><sub>Interface examples from version 4.2.0. The invitation link shown is a demo.</sub></p>
 
 ## 🚀 Quick start
 
@@ -93,7 +97,7 @@ For manual installation, select the corresponding build directory instead of the
 - **Fast transition → less waiting.** Once Valve accepts a verdict, the next clip normally loads without a full page refresh.
 - **Repeat detection → less duplicate work.** The extension recognizes previously seen fragments, displays earlier answers, and can fill them in for confirmation.
 - **History → context when you need it.** Up to 1,000 submitted tasks are stored locally, grouped by match, and available for JSON import or export.
-- **Light and dark themes → comfortable viewing.** The selected theme applies to both the Valve page and extension UI.
+- **Graphite & Ice → one consistent interface.** Graphite surfaces and an ice-blue accent extend across the portal, welcome page, and invitation page.
 - **English and Russian → familiar controls.** The language follows the browser UI, while known portal labels are translated automatically.
 
 ## 🔄 Before and after
