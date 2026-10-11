@@ -1,4 +1,5 @@
 import type { ClipData } from '../../entities/clip.entity';
+import type { ValveVideoJsApi } from './adapters/valve-player-host.adapter';
 
 // The portal's inline script declares this in the MAIN world's global lexical
 // scope, rather than as a window property. Keep the native player and callbacks.
@@ -50,6 +51,21 @@ export const installNativeDeveloperSeeking = (clip: ClipData): (() => void) => {
   // The portal polls this to unlock its answers. Reporting the clip as fully
   // watched lets a skipped/seeked clip be verdictable immediately.
   const watched = (): boolean => true;
+  // The portal keeps "Mark Cheating" locked until playback starts
+  // (player.hasStarted()); report the player as started instead.
+  const markPlayerStarted = (): void => {
+    const api = (window as typeof window & { videojs?: ValveVideoJsApi }).videojs;
+    const player = api?.getPlayer?.('video') ?? api?.('video');
+    if (player?.hasStarted && !player.hasStarted()) player.hasStarted(true);
+  };
+  // The portal may also disable the input directly (e.g. older markup); clear
+  // that flag too while no confirmation is in progress.
+  const unlockPositiveInput = (): void => {
+    const confirming = document.querySelector('.verdict-column')?.classList.contains('confirming') ?? false;
+    if (confirming) return;
+    const input = document.querySelector<HTMLInputElement>('input[name="cheating"][value="positive"]');
+    if (input?.disabled) input.disabled = false;
+  };
   // The portal may restore its own check when a new clip mounts; re-assert ours.
   const assertWatchedOverride = (): void => {
     if (window.BIsMatchWatched === watched) return;
@@ -58,7 +74,12 @@ export const installNativeDeveloperSeeking = (clip: ClipData): (() => void) => {
     }
     window.BIsMatchWatched = watched;
   };
-  const overrideTimer = window.setInterval(assertWatchedOverride, 1_000);
+  const assertOverrides = (): void => {
+    markPlayerStarted();
+    unlockPositiveInput();
+    assertWatchedOverride();
+  };
+  const overrideTimer = window.setInterval(assertOverrides, 1_000);
   const unlock = (): void => {
     if (!boundaryUnlocked) return;
     furthestWatched = Math.max(furthestWatched, duration());
@@ -87,7 +108,7 @@ export const installNativeDeveloperSeeking = (clip: ClipData): (() => void) => {
       replayEnded();
     }, 250);
   };
-  assertWatchedOverride();
+  assertOverrides();
   unlock();
   video.addEventListener('loadedmetadata', unlock);
   video.addEventListener('seeking', reset, true);

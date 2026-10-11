@@ -36,6 +36,7 @@ it.each([
     id: () => 'video', el: () => document.querySelector<HTMLElement>('#video')!,
     language: vi.fn(() => 'en'), currentTime: vi.fn(() => 0), pause: vi.fn(),
     dispose: vi.fn(), on: vi.fn(), off: vi.fn(), volume: vi.fn(() => 1), muted: vi.fn(() => false),
+    hasStarted: vi.fn(() => false),
   };
   window.videojs = Object.assign(() => player, { VERSION: '8.23.3', getPlayer: () => player, getPlayers: () => ({ video: player }) }) as unknown as typeof window.videojs;
   let receive: (event: IsolatedEvent) => void = () => {};
@@ -65,7 +66,7 @@ it.each([
   receive({ type: 'preferences', preferences: { volume: 0.4, muted: true } });
   expect(window.SubmitLabels).toBe(nativeSubmit);
   expect(document.querySelector('#video_html5_api')).toBe(video);
-  expect(document.querySelectorAll('input[name=cheating]:disabled')).toHaveLength(3);
+  expect(document.querySelectorAll('input[name=cheating]:disabled')).toHaveLength(2);
   expect(document.querySelector('.plyr')).not.toBeNull();
   expect(Object.hasOwn(document.querySelector('#submitverdictform')!, 'submit')).toBe(true);
   expect(player.dispose).not.toHaveBeenCalled();

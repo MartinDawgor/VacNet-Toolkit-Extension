@@ -4,6 +4,10 @@ export interface LegacyValvePlayer {
   el: () => HTMLElement;
   duration: () => number;
   paused: () => boolean;
+  hasStarted?: {
+    (): boolean;
+    (value: boolean): void;
+  };
   playbackRate: {
     (): number;
     (value: number): void;

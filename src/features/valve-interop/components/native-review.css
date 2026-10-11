@@ -17,7 +17,7 @@ body.vacnet-native-review .review-layout {
   padding: 24px;
   gap: 20px;
   box-sizing: border-box;
-  grid-template-columns: minmax(0, 1fr) minmax(320px, 380px);
+  grid-template-columns: minmax(0, 1fr) minmax(400px, 480px);
   grid-template-rows: auto;
   align-items: stretch;
 }
@@ -41,12 +41,6 @@ body.vacnet-native-review .task-instructions,
 body.vacnet-native-review .task-guidelines,
 body.vacnet-native-review .task-title {
   display: none;
-}
-
-/* The panel header counter duplicates the count already shown at the
-   bottom of the extension's verdict panel. */
-body.vacnet-native-review .panel-header .panel-clipcount {
-  display: none !important;
 }
 
 /* The native button's arming animation must run to enable confirmation.

@@ -120,14 +120,42 @@ body.vacnet-extension-root .video-column {
 
 body.vacnet-extension-root .video-column .top-section,
 body.vacnet-extension-root .verdict-column .top-section-logo,
-body.vacnet-extension-root .verdict-column .verdicts-container {
+body.vacnet-extension-root .verdict-column .verdicts-container,
+body.vacnet-extension-root .task-instructions,
+body.vacnet-extension-root .task-guidelines,
+body.vacnet-extension-root .task-title {
   display: none !important;
 }
 
-/* The header counter stays in the DOM (clip parsing and transitions read it),
-   but the panel at the bottom already shows the same count. */
-body.vacnet-native-review .PageHeader .ClipCount {
+/* Header counters stay in the DOM (clip parsing and transitions read them),
+   but the extension's panel already shows the same count. The panel header is
+   just the VACNet logo strip plus that counter, so it goes away entirely. */
+body.vacnet-extension-root .ClipCount,
+body.vacnet-extension-root .panel-header {
   display: none !important;
+}
+
+/* Legacy reviews submit through the extension's panel, so the site's own
+   button row is redundant. Native reviews keep it hidden via native-review.css
+   because its arming animation must still run. */
+body.vacnet-extension-root:not(.vacnet-native-review) #submitbuttons {
+  display: none !important;
+}
+
+/* Legacy layout: match the native review — wider video, narrower verdict
+   panel stretched to the clip height. */
+body.vacnet-extension-root:not(.vacnet-native-review) .review-layout {
+  --panel-w: clamp(400px, 24vw, 480px);
+  align-items: stretch;
+}
+
+body.vacnet-extension-root:not(.vacnet-native-review) .verdict-column {
+  width: auto;
+  max-height: none;
+  overflow: visible;
+  padding: 0;
+  background: transparent;
+  align-self: stretch;
 }
 
 body.vacnet-extension-root[data-theme='light'] img.CSLogo {
