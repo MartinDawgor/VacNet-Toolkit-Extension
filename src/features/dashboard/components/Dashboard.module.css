@@ -73,6 +73,10 @@
   overflow: hidden;
 }
 
+.history {
+  width: 100%;
+}
+
 .actions {
   display: flex;
   flex: 0 0 auto;
@@ -174,6 +178,14 @@
     width: calc(100vw - 32px);
     max-width: calc(100vw - 32px);
     max-height: calc(100vh - 96px);
+  }
+
+  .dashboard.history {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    max-width: 100%;
+    max-height: none;
   }
 
   .dashboard > header {
