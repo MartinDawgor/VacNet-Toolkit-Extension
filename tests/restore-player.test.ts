@@ -129,6 +129,17 @@ describe('Plyr over the preserved native review video', () => {
     expect(root.classList.contains('plyr--fullscreen-fallback')).toBe(false);
   });
 
+  it('resumes native playback when the video surface is clicked after a verdict pause', async () => {
+    const video = document.querySelector<HTMLVideoElement>('#video_html5_api')!;
+    const root = video.parentElement!;
+    const player = createAdapter(); player.configure(createDefaultPreferences(), clip);
+    await vi.advanceTimersByTimeAsync(0);
+    root.classList.add('vjs-play-locked');
+    root.querySelector<HTMLButtonElement>('.plyr__control--overlaid')!.click();
+    await Promise.resolve();
+    expect(video.paused).toBe(false);
+  });
+
   it('does not bubble Plyr media proxies into Video.js site handlers', async () => {
     const video = document.querySelector<HTMLVideoElement>('#video_html5_api')!;
     const root = video.parentElement!;

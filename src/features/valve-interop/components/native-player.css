@@ -46,12 +46,6 @@ body.vacnet-extension-root #video.vacnet-native-player-active > .vjs-big-play-bu
   z-index: 5;
 }
 
-/* Keep seeking available while the site locks playback at a decision point. */
-body.vacnet-extension-root #video.vacnet-native-player-active.vjs-play-locked [data-plyr='play'] {
-  pointer-events: none;
-  opacity: 0.5;
-}
-
 body.vacnet-extension-root #video.vacnet-native-player-active.plyr--fullscreen-fallback {
   position: fixed !important;
   z-index: 10000000;

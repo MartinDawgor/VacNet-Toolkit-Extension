@@ -39,7 +39,7 @@ export class PlyrInstanceController {
     this.ensureSprite();
     try {
       const native = this.host.element.dataset.vacnetNativePlayer === 'true';
-      const config: ConstructorParameters<typeof Plyr>[1] = { autoplay: false, clickToPlay: !native, controls: ['play-large', 'play', 'progress', 'current-time', 'duration', 'mute', 'settings', 'fullscreen'], i18n: { play: labels.play, pause: labels.pause, restart: labels.restart, volume: labels.volume, mute: labels.volume, unmute: labels.volume, settings: labels.settings, enterFullscreen: labels.enterFullscreen, exitFullscreen: labels.exitFullscreen }, keyboard: { focused: false, global: false }, invertTime: false, loadSprite: false, storage: { enabled: false }, tooltips: { controls: true, seek: true } };
+      const config: ConstructorParameters<typeof Plyr>[1] = { autoplay: false, clickToPlay: true, controls: ['play-large', 'play', 'progress', 'current-time', 'duration', 'mute', 'settings', 'fullscreen'], i18n: { play: labels.play, pause: labels.pause, restart: labels.restart, volume: labels.volume, mute: labels.volume, unmute: labels.volume, settings: labels.settings, enterFullscreen: labels.enterFullscreen, exitFullscreen: labels.exitFullscreen }, keyboard: { focused: false, global: false }, invertTime: false, loadSprite: false, storage: { enabled: false }, tooltips: { controls: true, seek: true } };
       if (clip && clip.eventTime >= 0) config.markers = { enabled: true, points: [{ time: clip.eventTime, label: markerLabel }] };
       if (native) {
         this.nativeShell = document.createElement('video');
