@@ -1,0 +1,91 @@
+/* Invitation-page additions to the static portal shell. */
+body:has(.PageContents > .intro-text-container > .invite-link-p) .intro-text-p:first-child {
+  color: var(--welcome-text);
+  font-size: 15px;
+  line-height: 1.7;
+}
+
+body:has(.PageContents > .intro-text-container > .invite-link-p) .intro-text-p:first-child::first-line {
+  font-size: inherit;
+  font-weight: inherit;
+  letter-spacing: normal;
+  line-height: inherit;
+}
+
+body:has(.PageContents > .intro-text-container > .invite-link-p) .invite-link-p {
+  width: 100%;
+  min-width: 0;
+  margin: 0;
+  padding: 16px;
+  box-sizing: border-box;
+  color: var(--welcome-accent);
+  background: var(--welcome-base);
+  border: 1px solid var(--welcome-border);
+  border-radius: 8px;
+  font: 13px/1.7 'SFMono-Regular', Consolas, 'Liberation Mono', monospace;
+  text-align: left;
+  overflow-wrap: anywhere;
+  user-select: all;
+}
+
+body:has(.PageContents > .intro-text-container > .invite-link-p) .CopyToClipboardButton {
+  display: inline-flex;
+  width: 100%;
+  height: auto;
+  min-height: 44px;
+  margin: 0;
+  padding: 10px 24px;
+  align-items: center;
+  justify-content: center;
+  box-sizing: border-box;
+  color: var(--welcome-on-accent);
+  background: var(--welcome-accent);
+  border: 1px solid transparent;
+  border-radius: 8px;
+  box-shadow: var(--welcome-glow);
+  font: inherit;
+  font-weight: 600;
+  text-decoration: none;
+  cursor: pointer;
+  transition: background 140ms ease;
+}
+
+body:has(.PageContents > .intro-text-container > .invite-link-p) .CopyToClipboardButton:hover:not(:disabled) {
+  background: color-mix(in srgb, var(--welcome-accent) 88%, var(--welcome-text));
+  filter: none;
+}
+
+body:has(.PageContents > .intro-text-container > .invite-link-p) .CopyToClipboardButton:disabled {
+  color: var(--welcome-text);
+  background: var(--welcome-hover);
+  border-color: var(--welcome-border);
+  box-shadow: none;
+  filter: none;
+  cursor: default;
+}
+
+body:has(.PageContents > .intro-text-container > .invite-link-p) .CopyToClipboardButton:focus-visible {
+  outline: 2px solid var(--welcome-accent);
+  outline-offset: 3px;
+}
+
+body:has(.PageContents > .intro-text-container > .invite-link-p) .intro-page-button .SecondaryButton {
+  min-width: 120px;
+  min-height: 40px;
+  color: var(--welcome-text);
+  background: var(--welcome-surface);
+  border-color: var(--welcome-border);
+  box-shadow: none;
+  font-weight: 500;
+}
+
+body:has(.PageContents > .intro-text-container > .invite-link-p) .intro-page-button .SecondaryButton:hover {
+  background: var(--welcome-hover);
+  border-color: var(--welcome-secondary);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  body:has(.PageContents > .intro-text-container > .invite-link-p) .CopyToClipboardButton {
+    transition: none;
+  }
+}

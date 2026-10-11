@@ -1,0 +1,257 @@
+/* Prefixed properties and exact site selectors keep the new visual language
+   outside the player subtree. Do not alias the shared theme on body or html. */
+html[data-theme='dark'],
+body.vacnet-extension-root[data-theme='dark'] {
+  --ui-site-base: #101216;
+  --ui-site-raised: #191c22;
+  --ui-site-hover: #22262e;
+  --ui-site-border: #30353f;
+  --ui-site-text: #f0f2f6;
+  --ui-site-secondary: #a4abb7;
+  --ui-site-accent: #8fb8ff;
+  --ui-site-accent-soft: rgb(143 184 255 / 10%);
+  --ui-site-overlay: rgb(8 10 14 / 72%);
+  --ui-site-on-accent: #101722;
+}
+
+html[data-theme='light'],
+body.vacnet-extension-root[data-theme='light'] {
+  --ui-site-base: #f5f6f8;
+  --ui-site-raised: #ffffff;
+  --ui-site-hover: #edf0f5;
+  --ui-site-border: #d6dce6;
+  --ui-site-text: #20252f;
+  --ui-site-secondary: #596476;
+  --ui-site-accent: #365ca8;
+  --ui-site-accent-soft: rgb(54 92 168 / 8%);
+  --ui-site-overlay: rgb(28 34 44 / 28%);
+  --ui-site-on-accent: #ffffff;
+}
+
+html[data-theme='dark'],
+html[data-theme='light'],
+body.vacnet-extension-root,
+body.vacnet-extension-root .page-container {
+  background-color: var(--ui-site-base) !important;
+}
+
+/* The full interface can exceed the viewport with four categories and presets.
+   Keep every answer and detail reachable, with footer links below the content. */
+body.vacnet-extension-root {
+  height: auto;
+  min-height: 100vh;
+  overflow: auto;
+  overflow-x: clip;
+}
+
+body.vacnet-extension-root .page-container {
+  height: auto;
+  min-height: 100vh;
+  container-type: normal;
+}
+
+body.vacnet-extension-root:not(.vacnet-native-review) .review-layout {
+  grid-template-columns: minmax(0, 1fr) var(--panel-w);
+  grid-template-rows: auto;
+  flex: 0 0 auto;
+}
+
+body.vacnet-extension-root .footer-container {
+  position: static;
+  flex: 0 0 auto;
+  width: 100%;
+  margin-top: 20px;
+}
+
+body.vacnet-extension-root .PageHeader {
+  background: var(--ui-site-base) !important;
+  border-bottom: 1px solid var(--ui-site-border) !important;
+  font-family: var(--font-primary);
+}
+
+/* Preserve the original player underlay when the new page background is visible
+   through its transparent video wrapper. Controls and player tokens stay intact. */
+body.vacnet-extension-root .videocontainer {
+  background-color: var(--bg-base);
+}
+
+/* Presets occupy rows within the existing right column rather than covering the
+   verdict or widening the native grid beyond its available track. */
+body.vacnet-extension-root.vacnet-preset-panel-open .verdict-column {
+  width: auto;
+}
+
+body.vacnet-extension-root .PageHeader .right,
+body.vacnet-extension-root .PageHeader .right > p {
+  color: var(--ui-site-secondary) !important;
+  font-size: 13px;
+}
+
+body.vacnet-extension-root .invitebutton,
+body.vacnet-extension-root .invitebutton:visited,
+body.vacnet-extension-root .PageHeader .right > p > a[href*='/oauth/logout'] {
+  min-height: 34px;
+  padding: 0 14px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--ui-site-text) !important;
+  background: var(--ui-site-raised) !important;
+  border: 1px solid var(--ui-site-border) !important;
+  border-radius: 8px;
+  font-size: 13px;
+  font-weight: 500;
+  word-spacing: normal;
+  text-decoration: none;
+}
+
+body.vacnet-extension-root .invitebutton:hover,
+body.vacnet-extension-root .PageHeader .right > p > a[href*='/oauth/logout']:hover {
+  background: var(--ui-site-hover) !important;
+  border-color: var(--ui-site-secondary) !important;
+}
+
+body.vacnet-extension-root .vacnet-github-btn {
+  color: var(--ui-site-secondary);
+}
+
+body.vacnet-extension-root .vacnet-github-btn:hover {
+  color: var(--ui-site-text);
+}
+
+/* Existing site dialogs (for example, invitations) use the same palette.
+   These selectors do not target Plyr or extension player overlays. */
+body.vacnet-extension-root .modaloverlay {
+  background: var(--ui-site-overlay);
+}
+
+body.vacnet-extension-root .modalcontent {
+  box-sizing: border-box;
+  max-width: calc(100vw - 32px);
+  max-height: calc(100vh - 32px);
+  overflow: auto;
+  padding: 24px;
+  color: var(--ui-site-text);
+  background: var(--ui-site-raised);
+  border: 1px solid var(--ui-site-border);
+  border-radius: 8px;
+  box-shadow: 0 18px 48px rgb(0 0 0 / 24%);
+}
+
+body.vacnet-extension-root .modalheader {
+  color: var(--ui-site-text);
+  background: transparent;
+  text-align: left;
+  font-size: 16px;
+  font-weight: 600;
+}
+
+body.vacnet-extension-root .modalcontent a {
+  color: var(--ui-site-accent);
+}
+
+body.vacnet-extension-root .modalcontent .PrimaryButton,
+body.vacnet-extension-root .modalcontent #copybutton {
+  color: var(--ui-site-on-accent);
+  background: var(--ui-site-accent);
+  border: 1px solid transparent;
+  border-radius: 8px;
+}
+
+body.vacnet-extension-root .modalcontent .SecondaryButton,
+body.vacnet-extension-root .modalcontent .CopyToClipboardButton {
+  color: var(--ui-site-text);
+  background: var(--ui-site-hover);
+  border: 1px solid var(--ui-site-border);
+  border-radius: 8px;
+}
+
+body.vacnet-extension-root footer,
+body.vacnet-extension-root .footer-container,
+body.vacnet-extension-root .footer-container .footer-buttons {
+  background: var(--ui-site-base) !important;
+  border-color: var(--ui-site-border) !important;
+  color: var(--ui-site-secondary) !important;
+  font-family: var(--font-primary);
+}
+
+body.vacnet-extension-root .footer-container .footer-buttons {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 8px 24px;
+}
+
+body.vacnet-extension-root footer a,
+body.vacnet-extension-root .footer-container a {
+  color: var(--ui-site-secondary) !important;
+  font-size: 13px;
+  text-decoration: none;
+  transition: color 140ms ease;
+}
+
+body.vacnet-extension-root footer a:hover,
+body.vacnet-extension-root .footer-container a:hover,
+body.vacnet-extension-root .footer-container a[aria-current='page'] {
+  color: var(--ui-site-accent) !important;
+}
+
+body.vacnet-extension-root .footer-container p,
+body.vacnet-extension-root .footer-container span {
+  color: var(--ui-site-secondary) !important;
+  font-size: 11px;
+  line-height: 1.5;
+}
+
+body.vacnet-extension-root .PageHeader a:focus-visible,
+body.vacnet-extension-root .footer-container a:focus-visible {
+  outline: 2px solid var(--ui-site-accent);
+  outline-offset: 3px;
+}
+
+@media (max-width: 700px) {
+  body.vacnet-extension-root .PageHeader { padding-inline: 12px; }
+  body.vacnet-extension-root .PageHeader .right { gap: 8px !important; }
+  body.vacnet-extension-root .PageHeader .right > p:has(> a[href*='/oauth/logout']) { gap: 8px; }
+  body.vacnet-extension-root .PageHeader .right > p > a[href*='/oauth/logout'] { min-width: 0; padding-inline: 10px; }
+  body.vacnet-extension-root .invitebutton { padding-inline: 10px; }
+  body.vacnet-extension-root .footer-container { padding-bottom: 24px; }
+}
+
+@media (max-width: 900px) {
+  /* Remove the site's second horizontal inset so the unchanged responsive
+     player width and the work panels fit within the available viewport. */
+  body.vacnet-extension-root .page-container { padding-inline: 0; }
+  body.vacnet-extension-root .review-layout { padding-inline: 12px; }
+  body.vacnet-extension-root .review-layout {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+  }
+  body.vacnet-extension-root .verdict-column {
+    width: 100% !important;
+    max-width: 100%;
+    flex-basis: auto !important;
+  }
+  body.vacnet-extension-root .video-column,
+  body.vacnet-extension-root .videocontainer {
+    max-width: 100%;
+  }
+}
+
+@media (max-width: 520px) {
+  body.vacnet-extension-root .PageHeader {
+    height: auto;
+    min-height: 100px;
+    flex-basis: auto;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+    padding-block: 12px;
+  }
+  body.vacnet-extension-root .PageHeader .right {
+    width: 100%;
+    justify-content: space-between;
+  }
+}

@@ -1,6 +1,6 @@
 import { getMessage } from '../../../shared/services/i18n.service';
 import type { ClipData, ClipDeduplication, NativeReviewControls } from '../../../entities/clip.entity';
-import { emptyVerdicts, verdictNames, verdictValues, type VerdictName, type VerdictSelection, type VerdictValue } from '../../../entities/verdict.entity';
+import { verdictNames, verdictValues, type VerdictName, type VerdictSelection, type VerdictValue } from '../../../entities/verdict.entity';
 import type { Translate } from '../../../shared/services/i18n.service';
 import { useTranslation } from '../../../shared/components/TranslationProvider';
 import { formatMatchDate, formatVideoTime } from '../../../shared/utils/formatters.utils';
@@ -16,8 +16,6 @@ interface VerdictPanelProps {
   onChange: (name: VerdictName, value: VerdictValue) => void;
   onSubmit: (verdicts: VerdictSelection, badClip: boolean) => void;
   onConfirm?: () => void;
-  onCancel?: () => void;
-  onReportBadClip?: () => void;
   previousVerdicts: VerdictSelection | null;
   submitting: boolean;
   verdicts: VerdictSelection;
@@ -101,8 +99,6 @@ export const VerdictPanel = ({
   onChange,
   onSubmit,
   onConfirm,
-  onCancel,
-  onReportBadClip,
   previousVerdicts,
   submitting,
   verdicts,
@@ -120,9 +116,10 @@ export const VerdictPanel = ({
 
   return (
     <section class={`${styles.panel} ${nativeReview ? styles.nativePanel : ''}`} aria-label={t('verdictTitle')}>
-      <h1>{t('verdictTitle')}</h1>
+      <h1>{t('verdictHeading')}</h1>
+      <p class={styles.instruction}>{t('verdictTitle')}</p>
       {categories.map((name) => (
-        <fieldset class={styles.category} disabled={submitting || (nativeReview && Boolean(reviewControls?.confirming))} key={name}>
+        <fieldset class={styles.category} disabled={submitting} key={name}>
           <legend>{categoryLabels[name]}</legend>
           <div class={styles.choices}>
             {verdictValues.map((value) => {
@@ -138,7 +135,7 @@ export const VerdictPanel = ({
                     checked={verdicts[name] === value}
                     onChange={() => onChange(name, value)}
                   />
-                  <span>{choiceLabel(value, t, nativeReview)}</span>
+                  <span><span class={styles.selectionMark} aria-hidden="true">✓</span>{choiceLabel(value, t, nativeReview)}</span>
                 </label>
               );
             })}
@@ -146,23 +143,13 @@ export const VerdictPanel = ({
         </fieldset>
       ))}
       {error && <p class={styles.error} role="alert">{error}</p>}
-      {nativeReview && <p class={styles.hint} role="status">{t(reviewControls?.confirming ? 'nativeConfirmHint' : 'nativeWatchHint')}</p>}
       {nativeReview ? <div class={styles.actions}>
         <button type="button" disabled={submitting || !reviewControls?.confirmAvailable} onClick={onConfirm}>
           {t('btnConfirm')}
         </button>
-        <button type="button" disabled={submitting || !reviewControls?.confirming} onClick={onCancel}>
-          {t('cancel')}
-        </button>
-        <button type="button" class={styles.report} disabled={submitting || !clip || Boolean(reviewControls?.confirming)} onClick={onReportBadClip}>
-          {t('btnReportBadClip')}
-        </button>
       </div> : <div class={styles.actions}>
         <button type="button" disabled={submitting} onClick={() => onSubmit(verdicts, false)}>
           {t('btnSubmit')}
-        </button>
-        <button type="button" disabled={submitting} onClick={() => onSubmit(emptyVerdicts(), false)}>
-          {t('btnSkip')}
         </button>
       </div>}
       {nativeReview && reviewControls?.confirming && reviewControls.decisionTime != null

@@ -7,6 +7,7 @@ import '../src/features/theme/components/theme.css';
 import '../src/features/valve-interop/components/valve-overrides.css';
 import '../src/features/valve-interop/components/native-player.css';
 import '../src/features/valve-interop/components/native-review.css';
+import '../src/features/valve-interop/components/site-interface.css';
 import { startExtensionBoot } from '../src/app/extension-boot.service';
 
 export default defineContentScript({

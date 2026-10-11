@@ -1,0 +1,101 @@
+/* Only the extension's work surfaces receive these aliases. The player and its
+   separate overlay tree continue to inherit the original theme unchanged. */
+[data-vacnet-interface] {
+  --ui-base: #101216;
+  --ui-surface: #191c22;
+  --ui-raised: #22262e;
+  --ui-border: #30353f;
+  --ui-text: #f0f2f6;
+  --ui-secondary: #a4abb7;
+  --ui-accent: #8fb8ff;
+  --ui-accent-hover: #a6c8ff;
+  --ui-on-accent: #101722;
+  --ui-accent-soft: rgb(143 184 255 / 10%);
+  --ui-glow: 0 0 16px rgb(143 184 255 / 12%);
+
+  --bg-base: var(--ui-base);
+  --bg-surface: var(--ui-surface);
+  --bg-elevated: var(--ui-raised);
+  --bg-header: var(--ui-base);
+  --bg-footer: var(--ui-base);
+  --bg-overlay: rgb(8 10 14 / 76%);
+  --bg-hover: var(--ui-raised);
+  --bg-subtle: rgb(240 242 246 / 3%);
+  --bg-soft: rgb(240 242 246 / 2%);
+  --text-primary: var(--ui-text);
+  --text-strong: var(--ui-text);
+  --text-secondary: var(--ui-secondary);
+  --text-muted: var(--ui-secondary);
+  --border-default: var(--ui-border);
+  --border-subtle: var(--ui-border);
+  --border-medium: var(--ui-border);
+  --border-strong: #59616e;
+  --focus-ring: var(--ui-accent);
+  --shadow-default: rgb(0 0 0 / 24%);
+  --shadow-strong: rgb(0 0 0 / 40%);
+  --shadow-panel: none;
+  --accent-primary: var(--ui-accent);
+  --accent-strong: var(--ui-accent);
+  --accent-surface: var(--ui-accent-soft);
+
+  --success-text: #81cba5;
+  --success-surface: #1d2c28;
+  --success-hover: #293d34;
+  --success-on-surface: #81cba5;
+  --success-panel: rgb(129 203 165 / 12%);
+  --success-panel-soft: rgb(129 203 165 / 6%);
+  --danger-text: #ef9a9a;
+  --danger-surface: #302327;
+  --danger-surface-strong: #755053;
+  --danger-on-surface: #ef9a9a;
+  --danger-panel: rgb(239 154 154 / 10%);
+  --danger-panel-soft: rgb(239 154 154 / 6%);
+  --neutral-text: var(--ui-secondary);
+  --neutral-surface: var(--ui-raised);
+  --neutral-surface-strong: #59616e;
+  --neutral-on-surface: var(--ui-text);
+  --warning-text: #d7b977;
+  --info-surface: var(--ui-accent-soft);
+  --info-on-surface: var(--ui-accent);
+  --choice-background: var(--ui-base);
+  --choice-border: var(--ui-border);
+  --choice-text: var(--ui-secondary);
+  --details-value: var(--ui-text);
+  --details-label: var(--ui-secondary);
+
+  color: var(--ui-text);
+  font-family: var(--font-primary);
+  font-size: 14px;
+  line-height: 1.5;
+}
+
+:host([data-theme='light']) [data-vacnet-interface],
+[data-theme='light'] [data-vacnet-interface] {
+  --ui-base: #f5f6f8;
+  --ui-surface: #ffffff;
+  --ui-raised: #edf0f5;
+  --ui-border: #d6dce6;
+  --ui-text: #20252f;
+  --ui-secondary: #596476;
+  --ui-accent: #365ca8;
+  --ui-accent-hover: #2e5095;
+  --ui-on-accent: #ffffff;
+  --ui-accent-soft: rgb(54 92 168 / 8%);
+  --ui-glow: 0 0 16px rgb(54 92 168 / 10%);
+  --bg-overlay: rgb(20 26 38 / 40%);
+  --bg-subtle: rgb(32 37 47 / 3%);
+  --bg-soft: rgb(32 37 47 / 2%);
+  --border-strong: #a0abba;
+  --shadow-default: rgb(20 26 38 / 12%);
+  --shadow-strong: rgb(20 26 38 / 20%);
+  --success-text: #246a4b;
+  --success-surface: #e6f3eb;
+  --success-hover: #d6eadd;
+  --success-on-surface: #246a4b;
+  --danger-text: #9a3c44;
+  --danger-surface: #fae9eb;
+  --danger-surface-strong: #d7a6ad;
+  --danger-on-surface: #9a3c44;
+  --neutral-surface-strong: #a0abba;
+  --warning-text: #7b5e22;
+}

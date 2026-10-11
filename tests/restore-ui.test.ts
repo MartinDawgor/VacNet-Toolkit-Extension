@@ -57,33 +57,38 @@ it('restores all toolbar preferences and the cheating panel in native reviews', 
   }
   expect(root.querySelectorAll('input[name="vacnet-cheating"]')).toHaveLength(3);
   expect(root.querySelector('input[name="vacnet-aimassist"]')).toBeNull();
-  expect(root.textContent).toContain('nativeWatchHint');
+  expect(root.textContent).not.toContain('nativeWatchHint');
   expect(root.querySelector<HTMLInputElement>('#vacnet-cheating-skip')!.disabled).toBe(true);
   act(() => root.querySelector<HTMLInputElement>('#vacnet-cheating-positive')!.click());
   expect(command).toHaveBeenLastCalledWith({ type: 'set-verdict', name: 'cheating', value: 'positive' });
   expect(button('btnConfirm').disabled).toBe(true);
 });
 
-it('uses explicit confirm and cancel commands and exposes the decision tick', () => {
+it('keeps pending native choices editable and confirms without a cancel button', () => {
   snapshotSignal.value = { ...snapshotSignal.value, verdicts: { ...emptyVerdicts(), cheating: 'positive' },
     reviewControls: { positiveAvailable: true, skipAvailable: true, negativeAvailable: true,
       confirming: true, confirmAvailable: true, decisionTick: 22531.75, decisionTime: 205.4 } };
   const command = mountApp(true);
-  expect(root.querySelector<HTMLInputElement>('#vacnet-cheating-positive')!.matches(':disabled')).toBe(true);
-  expect(root.textContent).toContain('nativeConfirmHint');
+  expect(root.querySelector<HTMLInputElement>('#vacnet-cheating-positive')!.matches(':disabled')).toBe(false);
+  expect(root.textContent).not.toContain('nativeConfirmHint');
   expect(root.textContent).toContain('Время решения: 3:25.40');
+  expect(button('cancel')).toBeUndefined();
+  act(() => root.querySelector<HTMLInputElement>('#vacnet-cheating-negative')!.click());
+  expect(command).toHaveBeenLastCalledWith({ type: 'set-verdict', name: 'cheating', value: 'negative' });
   act(() => button('btnConfirm').click());
   expect(command).toHaveBeenLastCalledWith({ type: 'confirm-verdict' });
-  act(() => button('cancel').click());
-  expect(command).toHaveBeenLastCalledWith({ type: 'cancel-verdict' });
 });
 
 it('preserves legacy categories and submission behavior', () => {
+  const verdicts = { ...emptyVerdicts(), wallhack: 'positive' as const, aimassist: 'negative' as const };
+  snapshotSignal.value = { ...snapshotSignal.value, verdicts };
   const command = mountApp(false);
   expect(root.querySelectorAll('fieldset input[type="radio"]')).toHaveLength(12);
   expect(root.querySelector('input[name="vacnet-cheating"]')).toBeNull();
+  expect(button('btnSkip')).toBeUndefined();
+  expect(button('cancel')).toBeUndefined();
   act(() => button('btnSubmit').click());
-  expect(command).toHaveBeenLastCalledWith({ type: 'submit', verdicts: emptyVerdicts(), badClip: false });
+  expect(command).toHaveBeenLastCalledWith({ type: 'submit', verdicts, badClip: false });
 });
 
 it('keeps decisions locked until the native site makes them available', () => {
@@ -92,10 +97,10 @@ it('keeps decisions locked until the native site makes them available', () => {
     expect(input.matches(':disabled')).toBe(true);
   }
   expect(button('btnConfirm').disabled).toBe(true);
-  expect(button('cancel').disabled).toBe(true);
+  expect(button('cancel')).toBeUndefined();
 });
 
-it('retains clip details and the native previous verdict and reports a bad clip', () => {
+it('retains clip details and the native previous verdict without duplicating the footer report action', () => {
   snapshotSignal.value = { ...snapshotSignal.value,
     clip: { taskId: 'task-42', sourceWebmUrl: 'https://example.test/csow_0123456789abcdef.webm', videoId: '0123456789abcdef',
       range: { start: 1, end: 2 }, eventTime: 1.5, reviewType: 'cheating', clipCount: '42', app: '730',
@@ -103,7 +108,7 @@ it('retains clip details and the native previous verdict and reports a bad clip'
     deduplication: 'exact-duplicate', previousVerdicts: { ...emptyVerdicts(), cheating: 'negative' },
     reviewControls: { positiveAvailable: true, skipAvailable: true, negativeAvailable: true,
       confirming: false, confirmAvailable: false, decisionTick: null, decisionTime: null } };
-  const command = mountApp(true);
+  mountApp(true);
   expect(root.textContent).toContain('clipDetails');
   expect(root.textContent).toContain('task-42');
   expect(root.textContent).toContain('previousVerdicts');
@@ -111,8 +116,7 @@ it('retains clip details and the native previous verdict and reports a bad clip'
   const previous = root.querySelectorAll('dl')[1]!;
   expect(previous.textContent).toContain('cheatingNo');
   expect(previous.textContent).not.toContain('labelAimAssist');
-  act(() => button('btnReportBadClip').click());
-  expect(command).toHaveBeenLastCalledWith({ type: 'report-bad-clip' });
+  expect(button('btnReportBadClip')).toBeUndefined();
 });
 
 it('keeps native preset edits isolated from legacy presets', async () => {

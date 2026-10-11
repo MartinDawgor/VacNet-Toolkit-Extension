@@ -20,12 +20,31 @@ for (const browser of ['chrome', 'firefox']) {
     assert.equal(manifest.default_locale, 'en');
     assert.deepEqual(manifest.permissions, ['storage']);
     assert.deepEqual(manifest.host_permissions, ['https://replay-video.valve.net/*']);
-    assert.equal(manifest.content_scripts.length, 2);
-    assert.deepEqual(manifest.content_scripts.map((script) => script.world).sort(), ['ISOLATED', 'MAIN']);
+    assert.equal(manifest.content_scripts.length, 3);
+    const reviewScripts = manifest.content_scripts.filter((script) =>
+      script.matches.includes('https://www.counter-strike.net/vacnet/clips*'));
+    assert.equal(reviewScripts.length, 2);
+    assert.deepEqual(reviewScripts.map((script) => script.world).sort(), ['ISOLATED', 'MAIN']);
+    for (const script of reviewScripts) {
+      assert.deepEqual(script.matches, ['https://www.counter-strike.net/vacnet/clips*']);
+    }
+    const welcomeScripts = manifest.content_scripts.filter((script) => !reviewScripts.includes(script));
+    assert.equal(welcomeScripts.length, 1);
+    assert.equal(welcomeScripts[0].world, 'ISOLATED');
+    assert.deepEqual([...welcomeScripts[0].matches].sort(), [
+      'https://www.counter-strike.net/vacnet',
+      'https://www.counter-strike.net/vacnet/',
+      'https://www.counter-strike.net/vacnet?*',
+      'https://www.counter-strike.net/vacnet/?*',
+      'https://www.counter-strike.net/vacnet/createinvite',
+      'https://www.counter-strike.net/vacnet/createinvite/',
+      'https://www.counter-strike.net/vacnet/createinvite?*',
+      'https://www.counter-strike.net/vacnet/createinvite/?*',
+    ].sort());
+    assert.ok(welcomeScripts[0].css.length > 0);
 
     const assets = new Set(Object.values(manifest.icons));
     for (const script of manifest.content_scripts) {
-      assert.deepEqual(script.matches, ['https://www.counter-strike.net/vacnet/clips*']);
       assert.equal(script.run_at, 'document_start');
       assert.ok(script.js.length > 0);
       for (const asset of [...script.js, ...(script.css ?? [])]) assets.add(asset);

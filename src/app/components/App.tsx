@@ -129,8 +129,6 @@ const VerdictPanelContainer = ({ nativeReview, onReviewCommand }: { nativeReview
         onReviewCommand({ type: 'submit', verdicts, badClip });
       }}
       onConfirm={() => onReviewCommand({ type: 'confirm-verdict' })}
-      onCancel={() => onReviewCommand({ type: 'cancel-verdict' })}
-      onReportBadClip={() => onReviewCommand({ type: 'report-bad-clip' })}
     />
   );
 };
@@ -188,7 +186,7 @@ export const App = ({
   };
 
   return (
-    <div class={styles.appShell}>
+    <div class={styles.appShell} data-vacnet-interface>
       <nav class={styles.videoToolbar} aria-label={t('reviewInstructions')}>
         <div class={styles.hoverDropdown}>
           <button type="button" aria-label={t('reviewInstructions')}><Icon name="info" /></button>

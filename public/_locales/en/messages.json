@@ -977,5 +977,8 @@
   },
   "sourceNativeTraining": {
     "message": "Every verdict is equally useful for training future VACNet models."
+  },
+  "verdictHeading": {
+    "message": "Your verdict"
   }
 }

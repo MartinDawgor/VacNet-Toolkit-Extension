@@ -1,0 +1,288 @@
+/* Welcome-page-only styling. The review interface and player are outside this selector. */
+body:has(.PageContents > .vaclive-logo + .intro-text-container) {
+  --welcome-base: #101216;
+  --welcome-surface: #191c22;
+  --welcome-hover: #22262e;
+  --welcome-border: #30353f;
+  --welcome-text: #f0f2f6;
+  --welcome-secondary: #a4abb7;
+  --welcome-accent: #8fb8ff;
+  --welcome-on-accent: #101722;
+  --welcome-glow: 0 0 16px rgb(143 184 255 / 12%);
+  box-sizing: border-box;
+  min-height: 100vh;
+  margin: 0;
+  background: var(--welcome-base);
+  color: var(--welcome-text);
+  font: 14px/1.65 Inter, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+  text-align: left;
+}
+
+html[data-theme='light'] body:has(.PageContents > .vaclive-logo + .intro-text-container) {
+  --welcome-base: #f5f6f8;
+  --welcome-surface: #ffffff;
+  --welcome-hover: #edf0f5;
+  --welcome-border: #d6dce6;
+  --welcome-text: #20252f;
+  --welcome-secondary: #596476;
+  --welcome-accent: #365ca8;
+  --welcome-on-accent: #ffffff;
+  --welcome-glow: 0 0 16px rgb(54 92 168 / 10%);
+}
+
+body:has(.PageContents > .vaclive-logo + .intro-text-container) .PageBackground {
+  background: var(--welcome-base);
+}
+
+body:has(.PageContents > .vaclive-logo + .intro-text-container) .PageHeader {
+  display: flex;
+  min-height: 64px;
+  padding: 12px 24px;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+  box-sizing: border-box;
+  background: var(--welcome-base);
+  border-bottom: 1px solid var(--welcome-border);
+}
+
+body:has(.PageContents > .vaclive-logo + .intro-text-container) .CSLogo {
+  display: block;
+  width: 80px;
+  height: auto;
+  flex-shrink: 0;
+}
+
+html[data-theme='light'] body:has(.PageContents > .vaclive-logo + .intro-text-container) .CSLogo {
+  filter: brightness(0.15);
+}
+
+body:has(.PageContents > .vaclive-logo + .intro-text-container) .PageHeader .right {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+  color: var(--welcome-secondary);
+  font: inherit;
+  font-size: 13px;
+}
+
+body:has(.PageContents > .vaclive-logo + .intro-text-container) .PageHeader .right > p {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin: 0;
+}
+
+body:has(.PageContents > .vaclive-logo + .intro-text-container) .PageHeader .ClipCount {
+  color: var(--welcome-text);
+  font-size: 12px;
+  font-variant-numeric: tabular-nums;
+}
+
+body:has(.PageContents > .vaclive-logo + .intro-text-container) .ClipCount b {
+  color: var(--welcome-secondary);
+  font-weight: 400;
+}
+
+body:has(.PageContents > .vaclive-logo + .intro-text-container) .invitebutton,
+body:has(.PageContents > .vaclive-logo + .intro-text-container) .PageHeader .right a:not(.invitebutton) {
+  display: inline-flex;
+  min-height: 34px;
+  padding: 6px 14px;
+  align-items: center;
+  justify-content: center;
+  box-sizing: border-box;
+  color: var(--welcome-text);
+  background: var(--welcome-surface);
+  border: 1px solid var(--welcome-border);
+  border-radius: 8px;
+  font: inherit;
+  font-size: 13px;
+  font-weight: 500;
+  text-decoration: none;
+}
+
+body:has(.PageContents > .vaclive-logo + .intro-text-container) .PageHeader a:hover {
+  background: var(--welcome-hover);
+  background-image: none;
+  border-color: var(--welcome-secondary);
+}
+
+body:has(.PageContents > .vaclive-logo + .intro-text-container) .PageContents {
+  display: flex;
+  width: min(640px, calc(100% - 48px));
+  margin: 0 auto;
+  padding: 56px 0 72px;
+  flex-direction: column;
+  align-items: stretch;
+  box-sizing: border-box;
+}
+
+body:has(.PageContents > .vaclive-logo + .intro-text-container) .vaclive-logo {
+  width: 213px;
+  max-width: 100%;
+  height: 27px;
+  margin: 0 0 24px;
+  background-image: url('https://cdn.akamai.steamstatic.com/apps/csgo/images/vacnet_logo.svg');
+  background-position: left center;
+  background-size: contain;
+  background-repeat: no-repeat;
+  border-radius: 0;
+}
+
+body:has(.PageContents > .vaclive-logo + .intro-text-container) .intro-text-container {
+  width: 100%;
+  margin: 0;
+  padding: 32px;
+  gap: 20px;
+  box-sizing: border-box;
+  background: var(--welcome-surface);
+  border: 1px solid var(--welcome-border);
+  border-radius: 8px;
+}
+
+body:has(.PageContents > .vaclive-logo + .intro-text-container) .intro-text-p {
+  margin: 0;
+  padding: 0;
+  color: var(--welcome-secondary);
+  font: inherit;
+  line-height: 1.7;
+  text-align: left;
+}
+
+body:has(.PageContents > .vaclive-logo + .intro-text-container) .intro-text-p:first-child {
+  color: var(--welcome-text);
+  font-size: 15px;
+}
+
+body:has(.PageContents > .vaclive-logo + .intro-text-container) .intro-text-p:first-child::first-line {
+  color: var(--welcome-text);
+  font-size: 26px;
+  font-weight: 600;
+  letter-spacing: -0.025em;
+  line-height: 1.35;
+}
+
+body:has(.PageContents > .vaclive-logo + .intro-text-container) .intro-text-p b {
+  color: var(--welcome-text);
+  font-weight: 600;
+}
+
+body:has(.PageContents > .vaclive-logo + .intro-text-container) .intro-text-p:nth-child(4) {
+  padding-left: 16px;
+  color: var(--welcome-text);
+  border-left: 2px solid var(--welcome-accent);
+}
+
+body:has(.PageContents > .vaclive-logo + .intro-text-container) .intro-text-p:last-child {
+  padding-top: 20px;
+  border-top: 1px solid var(--welcome-border);
+  font-size: 13px;
+}
+
+body:has(.PageContents > .vaclive-logo + .intro-text-container) .intro-page-button {
+  display: flex;
+  width: 100%;
+  margin: 20px 0 0;
+  justify-content: flex-end;
+}
+
+body:has(.PageContents > .vaclive-logo + .intro-text-container) .intro-page-button .SecondaryButton {
+  display: inline-flex;
+  min-width: 160px;
+  min-height: 44px;
+  padding: 10px 24px;
+  align-items: center;
+  justify-content: center;
+  box-sizing: border-box;
+  color: var(--welcome-on-accent);
+  background: var(--welcome-accent);
+  border: 1px solid transparent;
+  border-radius: 8px;
+  box-shadow: var(--welcome-glow);
+  font: inherit;
+  font-weight: 600;
+  text-decoration: none;
+  cursor: pointer;
+  transition: background 140ms ease;
+}
+
+body:has(.PageContents > .vaclive-logo + .intro-text-container) .intro-page-button .SecondaryButton:hover {
+  background: color-mix(in srgb, var(--welcome-accent) 88%, var(--welcome-text));
+  filter: none;
+}
+
+body:has(.PageContents > .vaclive-logo + .intro-text-container) a:focus-visible {
+  outline: 2px solid var(--welcome-accent);
+  outline-offset: 3px;
+}
+
+@media (max-width: 800px) {
+  body:has(.PageContents > .vaclive-logo + .intro-text-container) .PageHeader {
+    flex-wrap: wrap;
+    padding: 16px;
+    gap: 16px;
+  }
+
+  body:has(.PageContents > .vaclive-logo + .intro-text-container) .PageHeader .right {
+    display: grid;
+    width: 100%;
+    margin-left: 0;
+    grid-template-columns: minmax(0, 1fr) auto;
+    gap: 12px;
+    font-size: 12px;
+  }
+
+  body:has(.PageContents > .vaclive-logo + .intro-text-container) .PageHeader .right > p:not(.ClipCount) {
+    grid-column: 2;
+    grid-row: 1;
+    gap: 8px;
+  }
+
+  body:has(.PageContents > .vaclive-logo + .intro-text-container) .PageHeader .ClipCount {
+    grid-column: 1 / -1;
+    grid-row: 2;
+    padding-top: 12px;
+    justify-content: space-between;
+    border-top: 1px solid var(--welcome-border);
+  }
+
+  body:has(.PageContents > .vaclive-logo + .intro-text-container) .invitebutton {
+    width: fit-content;
+    max-width: 100%;
+    height: auto;
+    white-space: normal;
+    font-size: 12px;
+  }
+
+  body:has(.PageContents > .vaclive-logo + .intro-text-container) .PageHeader .right a:not(.invitebutton) {
+    padding-inline: 10px;
+    font-size: 12px;
+  }
+}
+
+@media (max-width: 520px) {
+  body:has(.PageContents > .vaclive-logo + .intro-text-container) .PageContents {
+    width: calc(100% - 32px);
+    padding: 32px 0 40px;
+  }
+
+  body:has(.PageContents > .vaclive-logo + .intro-text-container) .intro-text-container {
+    padding: 20px;
+    gap: 20px;
+  }
+
+  body:has(.PageContents > .vaclive-logo + .intro-text-container) .intro-text-p:first-child::first-line {
+    font-size: 23px;
+  }
+
+  body:has(.PageContents > .vaclive-logo + .intro-text-container) .intro-page-button .SecondaryButton {
+    width: 100%;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  body:has(.PageContents > .vaclive-logo + .intro-text-container) .intro-page-button .SecondaryButton {
+    transition: none;
+  }
+}

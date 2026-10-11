@@ -12,6 +12,7 @@ export class NativeReviewController {
   private lastState = '';
   private disposed = false;
   private isSubmitting = false;
+  private editableChoices: Record<VerdictValue, boolean> = { positive: false, skip: false, negative: false };
 
   constructor(private readonly root: Document, private readonly onChange: () => void) {
     this.observer = new MutationObserver(this.refresh);
@@ -27,7 +28,9 @@ export class NativeReviewController {
   }
 
   snapshot(): NativeReviewControls {
-    const confirming = this.root.querySelector('.verdict-column')?.classList.contains('confirming') ?? false;
+    const confirming = this.confirming();
+    const available = (value: VerdictValue): boolean => !this.isSubmitting
+      && (confirming ? this.editableChoices[value] : this.available(value));
     const button = this.root.querySelector<HTMLButtonElement>('#submitVerdictButton');
     const rawTick = this.root.querySelector<HTMLInputElement>('#form_verdict_tick')?.value.trim();
     const tick = rawTick ? Number(rawTick) : null;
@@ -35,7 +38,7 @@ export class NativeReviewController {
     const decisionTime = confirming && video && Number.isFinite(video.currentTime) && video.currentTime >= 0
       ? video.currentTime : null;
     return {
-      positiveAvailable: this.available('positive'), skipAvailable: this.available('skip'), negativeAvailable: this.available('negative'),
+      positiveAvailable: available('positive'), skipAvailable: available('skip'), negativeAvailable: available('negative'),
       confirming, confirmAvailable: confirming && !!button && !button.disabled && !this.isSubmitting,
       decisionTick: tick !== null && Number.isFinite(tick) && tick >= 0 ? tick : null,
       decisionTime,
@@ -94,8 +97,26 @@ export class NativeReviewController {
     const input = this.input(value);
     return !!input && !input.disabled && !this.isSubmitting;
   }
+  private confirming(): boolean {
+    return this.root.querySelector('.verdict-column')?.classList.contains('confirming') ?? false;
+  }
+  private rememberAvailability(): void {
+    this.editableChoices = {
+      positive: this.available('positive'), skip: this.available('skip'), negative: this.available('negative'),
+    };
+  }
   private select(value: VerdictValue): boolean {
+    if (this.isSubmitting) return false;
+    if (this.confirming()) {
+      if (this.verdicts().cheating === value) return true;
+      if (!this.editableChoices[value]) return false;
+      // Native confirmation disables radios. Cancel through the site so the
+      // replacement gets its own decision tick and confirmation arming delay.
+      this.cancel();
+      if (this.confirming()) return false;
+    }
     if (!this.available(value)) return false;
+    this.rememberAvailability();
     this.input(value)!.click();
     return this.verdicts().cheating === value;
   }
@@ -122,6 +143,7 @@ export class NativeReviewController {
 
   private readonly refresh = (): void => {
     if (this.disposed) return;
+    if (!this.confirming()) this.rememberAvailability();
     if (this.repeatVerdict && !this.verdicts().cheating && this.available(this.repeatVerdict)) {
       const value = this.repeatVerdict;
       this.repeatVerdict = null;

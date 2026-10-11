@@ -1,5 +1,5 @@
-.section+.section {
-  margin-top: 16px;
+.section + .section {
+  margin-top: 24px;
 }
 
 .section dl {
@@ -9,27 +9,42 @@
 .metric {
   display: grid;
   grid-template-columns: minmax(110px, 0.75fr) minmax(0, 1.25fr);
-  gap: 10px;
-  padding: 7px 0;
+  gap: 12px;
+  padding: 9px 0;
   border-bottom: 1px solid var(--border-subtle);
   font-size: 12px;
+  line-height: 1.5;
 }
 
 .metric dt {
-  color: var(--text-muted);
+  color: var(--text-secondary);
 }
 
 .metric dd {
   margin: 0;
   overflow-wrap: anywhere;
-  color: var(--text-strong);
+  color: var(--text-primary);
+  font-variant-numeric: tabular-nums;
 }
 
 .metric a {
   color: var(--accent-primary);
+  text-decoration: none;
+}
+
+.metric a:hover {
+  text-decoration: underline;
 }
 
 .metric a:focus-visible {
   outline: 2px solid var(--focus-ring);
   outline-offset: 2px;
+}
+
+@media (max-width: 360px) {
+  .metric {
+    grid-template-columns: minmax(90px, 0.85fr) minmax(0, 1.15fr);
+    gap: 8px;
+    font-size: 11px;
+  }
 }

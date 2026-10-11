@@ -10,14 +10,14 @@
 </p>
 
 <p align="center">
-  <a href="https://github.com/MartinDawgor/VacNet-Toolkit-Extension/releases"><img alt="Version 3.0.2" src="https://img.shields.io/badge/version-3.0.2-5d8d22?style=flat-square"></a>
+  <a href="https://github.com/pensiya5/VacNet-Toolkit-Extension/releases"><img alt="Version 4.2.0" src="https://img.shields.io/badge/version-4.2.0-8fb8ff?style=flat-square"></a>
   <a href="https://github.com/MartinDawgor/VacNet-Toolkit-Extension/blob/main/LICENSE"><img alt="GPL-3.0" src="https://img.shields.io/badge/license-GPL--3.0-356ea8?style=flat-square"></a>
   <img alt="Chromium Manifest V3" src="https://img.shields.io/badge/Chromium-Manifest_V3-4285F4?style=flat-square&logo=googlechrome&logoColor=white">
   <img alt="Firefox 128+" src="https://img.shields.io/badge/Firefox-128%2B-FF7139?style=flat-square&logo=firefoxbrowser&logoColor=white">
 </p>
 
 <p align="center">
-  <a href="https://github.com/MartinDawgor/VacNet-Toolkit-Extension/releases"><b>Download</b></a> ·
+  <a href="https://github.com/pensiya5/VacNet-Toolkit-Extension/releases"><b>Download</b></a> ·
   <a href="https://github.com/MartinDawgor/VacNet-Toolkit-Extension/issues"><b>Report an issue</b></a> ·
   <a href="README.md"><b>Русский</b></a>
 </p>
@@ -31,15 +31,17 @@
 
 ## 🚀 Quick start
 
-### Updated portal compatibility (3.0.2)
+### New interface (4.2.0)
 
-Plyr, the styled verdict panel, all toolbar buttons, presets and player shortcuts work in both modes. Legacy clips retain all four categories; the new type has one cheating question with cheating, uncertain and no-cheating answers. Presets are stored separately for each mode. The interface and history use Russian. New reviews retain the original media, watched-progress restrictions and site confirmation; decision ticks are submitted unchanged.
+Graphite & Ice refreshes the portal, verdict panel, history, presets, metrics, welcome page, and invitation page. Graphite surfaces, an ice-blue accent, and restrained glow replace the previous green palette. Plyr code, controls, and styling are preserved.
 
-History records the verdict and `verdict_tick` when a different task opens in the same tab. Until then, the record is pending for 10 minutes; no history entry is created if there is no next task. Legacy four-category clips retain their original interface. Compatibility was checked against a saved page and local scenarios; server submission still needs verification in an authenticated browser session.
+New reviews have one cheating question; legacy clips retain four independent categories. Answers fill the panel width, with a highlight that slides between options and changes color. Reduced-motion preferences disable the animation. New reviews allow changing an answer before confirmation without pressing Cancel separately; watched-progress restrictions and submission locking remain in place.
+
+History records the verdict and `verdict_tick` when a different task opens in the same tab. Until then, the record is pending for 10 minutes; no history entry is created if there is no next task. Presets are stored separately for each mode. Compatibility was checked against saved pages and local scenarios.
 
 > Active access to the official VACNet labeling portal is required.
 
-1. Download the archive for your browser from [Releases](https://github.com/MartinDawgor/VacNet-Toolkit-Extension/releases).
+1. Download the archive for your browser from [Releases](https://github.com/pensiya5/VacNet-Toolkit-Extension/releases).
 2. Extract it into a dedicated folder.
 3. Open `chrome://extensions`, enable **Developer mode**, and click **Load unpacked**.
 4. Select the extracted folder and open the VACNet portal.
@@ -108,7 +110,7 @@ For manual installation, select the corresponding build directory instead of the
 
 The suspicious moment is marked on the timeline. A countdown appears before the event, while a precise seek tooltip makes short fragments easier to inspect.
 
-The verdict panel covers four categories: **Aim Assist**, **Wall Hack**, **Auto BHop**, and **Bot**. Each category offers **Yes**, **Uncertain**, and **No**.
+New reviews offer one question with **Cheating**, **Uncertain**, and **No cheating** answers. Legacy clips cover four categories: **Aim Assist**, **Wall Hack**, **Auto BHop**, and **Bot**, each offering **Yes**, **Uncertain**, and **No**.
 
 You can also:
 

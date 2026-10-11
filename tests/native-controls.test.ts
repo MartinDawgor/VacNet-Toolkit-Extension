@@ -19,20 +19,23 @@ beforeEach(() => {
   const buttons = document.createElement('div');
   buttons.id = 'submitbuttons';
   panel.append(buttons);
+  let availableBeforeChoice = new Map<HTMLInputElement, boolean>();
   submitted = vi.fn();
   form.submit = submitted;
-  window.CancelVerdict = () => {
+  window.CancelVerdict = vi.fn(() => {
     radio('positive').checked = false; radio('skip').checked = false; radio('negative').checked = false;
     tick().value = '';
     panel.classList.remove('confirming');
-    radio('positive').disabled = false;
+    for (const [input, available] of availableBeforeChoice) input.disabled = !available;
     buttons.replaceChildren();
-  };
+  });
   window.ReportBadClip = vi.fn();
   document.querySelector('.verdicts-container')!.addEventListener('change', (event) => {
     const value = (event.target as HTMLInputElement).value;
     tick().value = value === 'positive' ? '22531.75' : '';
     panel.classList.add('confirming');
+    availableBeforeChoice = new Map([...document.querySelectorAll<HTMLInputElement>('input[name=cheating]')]
+      .map((input) => [input, !input.disabled]));
     for (const input of document.querySelectorAll<HTMLInputElement>('input[name=cheating]')) input.disabled = true;
     buttons.innerHTML = '<button id="backbutton">Cancel</button><button id="submitVerdictButton" disabled>Confirm</button>';
     buttons.querySelector('#backbutton')!.addEventListener('click', () => window.CancelVerdict!());
@@ -88,5 +91,78 @@ it('applies a repeated answer when available without unlocking answers or submit
   radio('negative').disabled = false;
   await new Promise<void>((resolve) => queueMicrotask(resolve));
   expect(controller.verdicts().cheating).toBe('negative');
+  expect(submitted).not.toHaveBeenCalled();
+});
+
+it.each(['negative', 'skip'] as const)('replaces a pending positive with %s using native cancellation and a new confirmation gate', async (value) => {
+  for (const choice of ['positive', 'negative', 'skip']) radio(choice).disabled = false;
+  controller.handle({ type: 'set-verdict', name: 'cheating', value: 'positive' });
+  expect(document.querySelectorAll('input[name=cheating]:disabled')).toHaveLength(3);
+  expect(controller.snapshot()).toMatchObject({ positiveAvailable: true, negativeAvailable: true, skipAvailable: true });
+  await arm();
+  const previousConfirm = document.querySelector('#submitVerdictButton');
+  document.querySelector('.verdicts-container')!.addEventListener('change', () => { tick().value = '33012.5'; });
+
+  controller.handle({ type: 'set-verdict', name: 'cheating', value });
+  expect(window.CancelVerdict).toHaveBeenCalledOnce();
+  expect(controller.verdicts().cheating).toBe(value);
+  expect(document.querySelector('#submitVerdictButton')).not.toBe(previousConfirm);
+  expect(controller.snapshot()).toMatchObject({ confirming: true, confirmAvailable: false, decisionTick: 33012.5 });
+  controller.handle({ type: 'confirm-verdict' });
+  expect(submitted).not.toHaveBeenCalled();
+
+  await arm();
+  controller.handle({ type: 'confirm-verdict' });
+  controller.handle({ type: 'confirm-verdict' });
+  controller.handle({ type: 'set-verdict', name: 'cheating', value: 'positive' });
+  expect(submitted).toHaveBeenCalledOnce();
+  expect(controller.verdicts().cheating).toBe(value);
+  expect(tick().value).toBe('33012.5');
+  expect(window.CancelVerdict).toHaveBeenCalledOnce();
+  expect(controller.snapshot()).toMatchObject({ positiveAvailable: false, negativeAvailable: false, skipAvailable: false });
+});
+
+it.each(['negative', 'skip'] as const)('rejects unavailable %s without cancelling the pending verdict', (value) => {
+  radio('positive').disabled = false;
+  controller.handle({ type: 'set-verdict', name: 'cheating', value: 'positive' });
+  expect(controller.snapshot()).toMatchObject({ positiveAvailable: true, negativeAvailable: false, skipAvailable: false });
+  controller.handle({ type: 'set-verdict', name: 'cheating', value });
+  expect(window.CancelVerdict).not.toHaveBeenCalled();
+  expect(controller.verdicts().cheating).toBe('positive');
+  expect(controller.snapshot()).toMatchObject({ confirming: true, decisionTick: 22531.75 });
+});
+
+it('rechecks the native availability restored by cancellation before clicking a replacement', () => {
+  radio('positive').disabled = false;
+  radio('negative').disabled = false;
+  controller.handle({ type: 'set-verdict', name: 'cheating', value: 'positive' });
+  const nativeCancel = window.CancelVerdict!;
+  window.CancelVerdict = vi.fn(() => { nativeCancel(); radio('negative').disabled = true; });
+  const click = vi.spyOn(radio('negative'), 'click');
+  controller.handle({ type: 'set-verdict', name: 'cheating', value: 'negative' });
+  expect(window.CancelVerdict).toHaveBeenCalledOnce();
+  expect(click).not.toHaveBeenCalled();
+  expect(controller.verdicts().cheating).toBeUndefined();
+  expect(controller.snapshot().negativeAvailable).toBe(false);
+});
+
+it('keeps an unchanged pending answer and its arming button intact', async () => {
+  radio('positive').disabled = false;
+  controller.handle({ type: 'set-verdict', name: 'cheating', value: 'positive' });
+  await arm();
+  const confirm = document.querySelector('#submitVerdictButton');
+  controller.handle({ type: 'set-verdict', name: 'cheating', value: 'positive' });
+  expect(window.CancelVerdict).not.toHaveBeenCalled();
+  expect(document.querySelector('#submitVerdictButton')).toBe(confirm);
+  expect(controller.snapshot().confirmAvailable).toBe(true);
+});
+
+it('does not auto-submit a manually changed answer from a pending auto-submit preset', async () => {
+  radio('positive').disabled = false;
+  radio('negative').disabled = false;
+  controller.handle({ type: 'submit', verdicts: { ...emptyVerdicts(), cheating: 'positive' }, badClip: false });
+  controller.handle({ type: 'set-verdict', name: 'cheating', value: 'negative' });
+  expect(controller.verdicts().cheating).toBe('negative');
+  await arm();
   expect(submitted).not.toHaveBeenCalled();
 });
