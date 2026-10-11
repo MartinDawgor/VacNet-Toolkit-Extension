@@ -103,7 +103,8 @@ export const installNativeDeveloperSeeking = (clip: ClipData): (() => void) => {
     if (playUnlockDelay !== null) window.clearTimeout(playUnlockDelay);
     playUnlockDelay = window.setTimeout(() => {
       playUnlockDelay = null;
-      if (!answersLocked()) return;
+      const confirming = document.querySelector('.verdict-column')?.classList.contains('confirming') ?? false;
+      if (confirming || !answersLocked()) return;
       console.info('[VACNET] Playback started; replaying the end-of-media event to unlock the answers.');
       replayEnded();
     }, 250);
