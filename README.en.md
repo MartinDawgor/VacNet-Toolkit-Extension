@@ -90,89 +90,60 @@ After adding or removing keys in `public/_locales`, run `npm run generate:i18n` 
 
 For manual installation, select the corresponding build directory instead of the repository root. The Firefox build uses a separate local ID, `vacnet-toolkit-local@extensions.invalid`, so its settings and history are separate from the published add-on. Use history export and import to transfer records if needed. The local Firefox archive is unsigned.
 
-## ✨ Highlights
+## What's new in 4.2.0
 
-- **Modern player → easier review.** Playback rates from 0.25× to 4×, precise seeking, time stepping, 2× zoom, persistent volume, and an event marker.
-- **Presets → four answers in one action.** Create up to nine color-coded presets, choose their verdicts, and optionally enable instant submission per preset.
-- **Fast transition → less waiting.** Once Valve accepts a verdict, the next clip normally loads without a full page refresh.
-- **Repeat detection → less duplicate work.** The extension recognizes previously seen fragments, displays earlier answers, and can fill them in for confirmation.
-- **History → context when you need it.** Up to 1,000 submitted tasks are stored locally, grouped by match, and available for JSON import or export.
-- **Graphite & Ice → one consistent interface.** Graphite surfaces and an ice-blue accent extend across the portal, welcome page, and invitation page.
-- **English and Russian → familiar controls.** The language follows the browser UI, while known portal labels are translated automatically.
+Graphite & Ice gives the portal one consistent interface: dark graphite surfaces, a cool blue accent, and a soft glow for available actions. The update covers the review panel, history, presets, metrics, welcome page, and invitation page. Plyr and its controls remain unchanged.
 
-## 🔄 Before and after
+### Two review formats
 
-| Standard portal | With VACNET Toolkit |
+| Clip type | How to choose a verdict |
 | --- | --- |
-| Limited clip navigation | Free navigation through the available replay and speeds up to 4× |
-| Four categories filled manually | Up to nine presets with number-key shortcuts |
-| Submission triggers normal navigation | The next task loads into the current interface |
-| Repeated fragments are easy to miss | Previous verdict and repeat status are shown alongside the clip |
-| Fixed legacy layout | Responsive interface with light and dark themes |
+| New clip | One question: **Cheating**, **Uncertain**, or **No cheating**. Change the answer before confirmation; the site still controls when answers and submission become available. |
+| Legacy clip | Four independent categories: **Aim Assist**, **Wall Hack**, **Auto BHop**, and **Bot**. Each offers **Yes**, **Uncertain**, or **No**, with all three choices spanning the panel. |
 
-## 🎮 Player and verdicts
+The active highlight glides between choices and takes on the selected answer's color. When the system requests reduced motion, the transition becomes immediate. Redundant cancel and skip buttons have been removed from the review panel.
 
-The suspicious moment is marked on the timeline. A countdown appears before the event, while a precise seek tooltip makes short fragments easier to inspect.
+### Review tools
 
-New reviews offer one question with **Cheating**, **Uncertain**, and **No cheating** answers. Legacy clips cover four categories: **Aim Assist**, **Wall Hack**, **Auto BHop**, and **Bot**, each offering **Yes**, **Uncertain**, and **No**.
+- **Plyr player:** speeds from 0.25× to 4×, frame stepping, 2× zoom, volume controls, and a marker when the site supplies a suspicious-event time.
+- **Presets:** up to nine saved verdict sets, available with number keys 1–9. Instant submission can be enabled separately for each preset.
+- **History:** up to 1,000 tasks, grouped by match. Review earlier verdicts and repeated clips, or import and export history as JSON.
+- **Metrics:** diagnostic details about the current clip and player.
+- **English and Russian:** the interface follows the browser language.
 
-You can also:
-
-- keep the player controls visible;
-- stretch the video to the available area;
-- hide the visible reviewer nickname;
-- copy a guest link to the clip;
-- inspect metrics for the current task;
-- import, export, or clear local history.
-
-## ⌨️ Keyboard shortcuts
+## Keyboard controls
 
 | Key | Action |
 | --- | --- |
-| `1`–`9` | Apply the preset at that position |
-| `Space` | Play / pause |
-| `R` | Return to the start of the working range |
-| `E` | Jump to the moment before the suspicious event |
-| `←` / `→` | Step backward / forward |
-| `[` / `]` | Decrease / increase playback speed |
-| `Z` | Toggle 2× zoom |
-| `Enter` | Submit the current verdict |
-| `Backspace` | Skip the clip |
-| `Esc` | Close an open dashboard or dialog |
+| 1–9 | Apply the preset at that position |
+| Space | Play or pause the video |
+| R | Return to the start of the clip |
+| ← / → | Step one frame backward or forward |
+| [ / ] | Decrease or increase playback speed |
+| Z | Toggle 2× zoom |
+| E | Jump to a marked event, when available |
+| Enter | Submit or confirm a verdict when the site allows it |
+| Esc | Close an open panel |
 
-Shortcuts use physical key positions and work across keyboard layouts. They are disabled while typing, interacting with controls, viewing a modal, or submitting a verdict.
+Shortcuts are inactive while typing, using form controls, viewing a dialog, or submitting a verdict. A preset with instant submission enabled sends its saved answers immediately.
 
-For new reviews, `Enter` confirms the selected answer after the site's arming delay, and `Backspace` selects uncertain when available. `E` applies only to clips with a marked event.
+## Privacy and data
 
-> If **Instant submit** is enabled for a preset, pressing its number submits the saved answer. New reviews retain the site's watched-progress restrictions and confirmation delay.
+- Settings, presets, and history are stored in the browser's local storage.
+- The extension has no analytics or telemetry and does not send data to the developer.
+- Network requests support the portal's verdict submission, task loading, metadata, and Valve video playback.
+- The clipboard is used only after you explicitly click a copy button.
 
-## 🔐 Privacy
+History exports and guest links can contain URLs with access parameters. Do not post them with bug reports or screenshots.
 
-- The extension contains no analytics, telemetry, or remotely executed code.
-- Preferences and history are stored locally through `browser.storage.local`.
-- The `storage` permission is used only for settings, presets, and history.
-- Host access is limited to the VACNet page on `counter-strike.net` and videos on `replay-video.valve.net`.
-- Network requests are used to submit verdicts, load the next task, read metadata, and stream Valve WebM video.
-- The extension writes to the clipboard only after you click **Share clip** or **Copy metrics**; it never reads clipboard contents.
-- No data is sent to the developer or third-party analytics services.
+## Important
 
-> A history export may contain direct source WebM URLs with access parameters. Do not publish history JSON files or copied guest links.
+VACNET Toolkit helps review replays and submit answers chosen by a person. It does not detect cheating on its own. Follow the portal's access rules and do not redistribute review materials.
 
-Nickname hiding only changes the name displayed in the top bar. It does not anonymize your account, network traffic, links, or exported data.
+This project is not affiliated with Valve Corporation. Counter-Strike, Counter-Strike 2, and VACNet are trademarks of Valve Corporation.
 
-## ⚠️ Important
+## Author and contact
 
-VACNET Toolkit helps manage playback and the answers you select; it does not decide verdicts on its own. Automatic submission occurs only for presets where the user explicitly enables that option.
+The original project was created by [MartinDawgor](https://github.com/MartinDawgor) and is distributed under the [GPL-3.0 license](https://github.com/MartinDawgor/VacNet-Toolkit-Extension/blob/main/LICENSE). Report issues in the [Issues section](https://github.com/pensiya5/VacNet-Toolkit-Extension/issues). You can support the original author with an optional [CloudTips donation](https://pay.cloudtips.ru/p/f1a3b6c9).
 
-This project is not affiliated with Valve Corporation. Counter-Strike, Counter-Strike 2, and VACNet are trademarks of Valve Corporation. Follow the portal access rules and do not redistribute review materials.
-
-## 👤 Author and contact
-
-The project is distributed under the [GPL-3.0 license](https://github.com/MartinDawgor/VacNet-Toolkit-Extension/blob/main/LICENSE) and maintained on a voluntary basis.
-
-- Author: [MartinDawgor](https://github.com/MartinDawgor)
-- Bugs and suggestions: [GitHub Issues](https://github.com/MartinDawgor/VacNet-Toolkit-Extension/issues)
-- Telegram: [@GeniusShitPost](https://t.me/GeniusShitPost)
-- Steam: [Chumzes](https://steamcommunity.com/id/Chumzes/)
-
-<p align="center"><sub>VACNET Toolkit Extension 3.0.0</sub></p>
+<p align="center"><sub>VACNET Toolkit Extension · 4.2.0</sub></p>
